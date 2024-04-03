@@ -1,12 +1,13 @@
 package br.com.fiap.economed.model;
 
+import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.CadastroClienteDto;
+import br.com.fiap.economed.dto.cliente.CadastroClienteDto;
 
 import java.time.LocalDate;
 
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "CP1_cliente")
 @EntityListeners(AuditingEntityListener.class)
 public class Cliente {
 
@@ -52,6 +53,17 @@ public class Cliente {
     private String token;
 
     public Cliente(CadastroClienteDto dto) {
+        this.rg = dto.rg();
+        this.nome = dto.nome();
+        this.telefone = dto.telefone();
+        this.email = dto.email();
+        this.dataNascimento = dto.dataNascimento();
+        this.cpf = dto.cpf();
+        this.estadoCivil = dto.estadoCivil();
+        this.temConvenio = dto.temConvenio();
+    }
+
+    public void atualizarDados(AtualizacaoClienteDto dto) {
         this.rg = dto.rg();
         this.nome = dto.nome();
         this.telefone = dto.telefone();

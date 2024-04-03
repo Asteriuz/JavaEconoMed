@@ -15,7 +15,7 @@ import br.com.fiap.economed.model.HistoricoSaudeCliente;
 import br.com.fiap.economed.repository.HistoricoSaudeClienteRepository;
 
 @RestController
-@RequestMapping("historico_saude_cliente")
+@RequestMapping("/historico-saude-cliente")
 public class HistoricoSaudeClienteController {
 
     @Autowired

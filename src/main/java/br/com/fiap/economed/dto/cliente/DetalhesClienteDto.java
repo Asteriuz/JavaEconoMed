@@ -1,4 +1,4 @@
-package br.com.fiap.economed.dto;
+package br.com.fiap.economed.dto.cliente;
 
 import br.com.fiap.economed.model.Cliente;
 import java.time.LocalDate;

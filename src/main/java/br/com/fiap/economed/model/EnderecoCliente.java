@@ -13,7 +13,7 @@ import br.com.fiap.economed.dto.CadastroEnderecoClienteDto;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "endereco_cliente")
+@Table(name = "CP1_endereco_cliente")
 @EntityListeners(AuditingEntityListener.class)
 public class EnderecoCliente {
 

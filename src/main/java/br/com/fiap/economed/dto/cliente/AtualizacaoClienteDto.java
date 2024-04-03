@@ -1,8 +1,8 @@
-package br.com.fiap.economed.dto;
+package br.com.fiap.economed.dto.cliente;
 
 import java.time.LocalDate;
 
-public record CadastroClienteDto(
+public record AtualizacaoClienteDto(
         String rg,
         String nome,
         String telefone,

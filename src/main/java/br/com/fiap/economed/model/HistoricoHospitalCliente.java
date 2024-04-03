@@ -15,7 +15,7 @@ import br.com.fiap.economed.dto.CadastroHistoricoHospitalClienteDto;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "historico_hospital_cliente")
+@Table(name = "CP1_historico_hospital_cliente")
 @EntityListeners(AuditingEntityListener.class)
 public class HistoricoHospitalCliente {
 
