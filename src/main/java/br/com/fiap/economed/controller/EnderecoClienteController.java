@@ -1,6 +1,5 @@
 package br.com.fiap.economed.controller;
 
-import br.com.fiap.economed.dto.cliente.DetalhesClienteDto;
 import br.com.fiap.economed.dto.clienteEndereco.AtualizacaoEnderecoClienteDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -12,14 +11,14 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.fiap.economed.dto.clienteEndereco.CadastroEnderecoClienteDto;
 import br.com.fiap.economed.dto.clienteEndereco.DetalhesEnderecoClienteDto;
 import br.com.fiap.economed.model.EnderecoCliente;
-import br.com.fiap.economed.repository.EnderecoRepository;
+import br.com.fiap.economed.repository.EnderecoClienteRepository;
 
 @RestController
 @RequestMapping("/endereco-cliente")
 public class EnderecoClienteController {
 
     @Autowired
-    private EnderecoRepository enderecoRepository;
+    private EnderecoClienteRepository enderecoRepository;
 
     //TODO: Implementar paginaçâo e ordenação, criar statusCode exceptions
 

@@ -1,4 +1,4 @@
-package br.com.fiap.economed.dto;
+package br.com.fiap.economed.dto.historicoHospitalCliente;
 
 import java.time.LocalDate;
 

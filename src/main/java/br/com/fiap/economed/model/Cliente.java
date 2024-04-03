@@ -47,10 +47,9 @@ public class Cliente {
     @Column(name = "estado_civil", length = 20)
     private String estadoCivil;
 
-    //TODO: Transformar em boolean
-    @Column(name = "tem_convenio", length = 1)
-    private String temConvenio;
-
+    @Column(name = "convenio_id")
+    private Long convenioId;
+    
     @Transient // Testando Transient por curiosidade, apagar depois
     private String token;
 
@@ -62,7 +61,7 @@ public class Cliente {
         this.dataNascimento = dto.dataNascimento();
         this.cpf = dto.cpf();
         this.estadoCivil = dto.estadoCivil();
-        this.temConvenio = dto.temConvenio();
+        this.convenioId = dto.convenioId();
     }
 
     public void atualizarDados(AtualizacaoClienteDto dto) {
@@ -73,7 +72,7 @@ public class Cliente {
         this.dataNascimento = dto.dataNascimento();
         this.cpf = dto.cpf();
         this.estadoCivil = dto.estadoCivil();
-        this.temConvenio = dto.temConvenio();
+        this.convenioId = dto.convenioId();
     }
 
 }

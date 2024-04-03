@@ -1,7 +1,7 @@
-package br.com.fiap.economed.dto.clienteEndereco;
+package br.com.fiap.economed.dto.unidadeEndereco;
 
-public record CadastroEnderecoClienteDto(
-                Long clienteId,
+public record CadastroEnderecoUnidadeDto(
+                Long unidadeId,
                 String rua,
                 String numero,
                 String cidade,

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.economed.dto.CadastroHistoricoHospitalClienteDto;
-import br.com.fiap.economed.dto.DetalhesHistoricoHospitalClienteDto;
+import br.com.fiap.economed.dto.historicoHospitalCliente.CadastroHistoricoHospitalClienteDto;
+import br.com.fiap.economed.dto.historicoHospitalCliente.DetalhesHistoricoHospitalClienteDto;
 import br.com.fiap.economed.model.HistoricoHospitalCliente;
 import br.com.fiap.economed.repository.HistoricoHospitalClienteRepository;
 

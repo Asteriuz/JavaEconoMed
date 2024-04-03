@@ -12,7 +12,7 @@ public record DetalhesClienteDto(
         LocalDate dataNascimento,
         String cpf,
         String estadoCivil,
-        String temConvenio) {
+        Long convenioId) {
 
     public DetalhesClienteDto(Cliente cliente) {
         this(
@@ -24,6 +24,6 @@ public record DetalhesClienteDto(
                 cliente.getDataNascimento(),
                 cliente.getCpf(),
                 cliente.getEstadoCivil(),
-                cliente.getTemConvenio());
+                cliente.getConvenioId());
     }
 }

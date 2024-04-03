@@ -6,9 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.time.LocalDate;
+import br.com.fiap.economed.dto.historicoHospitalCliente.CadastroHistoricoHospitalClienteDto;
 
-import br.com.fiap.economed.dto.CadastroHistoricoHospitalClienteDto;
+import java.time.LocalDate;
 
 @Getter
 @Setter

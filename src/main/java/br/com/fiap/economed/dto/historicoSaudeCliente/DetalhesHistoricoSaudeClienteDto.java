@@ -1,4 +1,4 @@
-package br.com.fiap.economed.dto;
+package br.com.fiap.economed.dto.historicoSaudeCliente;
 
 import br.com.fiap.economed.model.HistoricoSaudeCliente;
 

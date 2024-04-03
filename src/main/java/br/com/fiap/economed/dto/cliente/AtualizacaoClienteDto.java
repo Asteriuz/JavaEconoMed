@@ -10,5 +10,5 @@ public record AtualizacaoClienteDto(
         LocalDate dataNascimento,
         String cpf,
         String estadoCivil,
-        String temConvenio) {
+        Long convenioId) {
 }
