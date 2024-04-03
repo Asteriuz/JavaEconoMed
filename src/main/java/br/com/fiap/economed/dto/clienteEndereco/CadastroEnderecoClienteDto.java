@@ -1,4 +1,4 @@
-package br.com.fiap.economed.dto;
+package br.com.fiap.economed.dto.clienteEndereco;
 
 public record CadastroEnderecoClienteDto(
                 Long id,

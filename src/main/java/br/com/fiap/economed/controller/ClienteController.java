@@ -22,6 +22,8 @@ public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
 
+    //TODO: Implementar paginaçâo e ordenação, criar statusCode exceptions
+
     @GetMapping
     public ResponseEntity<List<DetalhesClienteDto>> listar() {
         var clientes = clienteRepository.findAll().stream().map(DetalhesClienteDto::new).toList();

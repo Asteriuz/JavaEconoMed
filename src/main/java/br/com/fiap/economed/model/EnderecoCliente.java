@@ -1,12 +1,13 @@
 package br.com.fiap.economed.model;
 
+import br.com.fiap.economed.dto.clienteEndereco.AtualizacaoEnderecoClienteDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.CadastroEnderecoClienteDto;
+import br.com.fiap.economed.dto.clienteEndereco.CadastroEnderecoClienteDto;
 
 @Getter
 @Setter
@@ -49,4 +50,16 @@ public class EnderecoCliente {
         this.cep = dto.cep();
     }
 
+    public void atualizarDados(AtualizacaoEnderecoClienteDto dto) {
+        if (dto.rua() != null)
+            rua = dto.rua();
+        if (dto.numero() != null)
+            numero = dto.numero();
+        if (dto.cidade() != null)
+            cidade = dto.cidade();
+        if (dto.estado() != null)
+            estado = dto.estado();
+        if (dto.cep() != null)
+            cep = dto.cep();
+    }
 }

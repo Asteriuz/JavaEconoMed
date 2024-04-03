@@ -43,9 +43,11 @@ public class Cliente {
     @Column(name = "cpf", length = 20)
     private String cpf;
 
+    //TODO: Transformar em enum
     @Column(name = "estado_civil", length = 20)
     private String estadoCivil;
 
+    //TODO: Transformar em boolean
     @Column(name = "tem_convenio", length = 1)
     private String temConvenio;
 

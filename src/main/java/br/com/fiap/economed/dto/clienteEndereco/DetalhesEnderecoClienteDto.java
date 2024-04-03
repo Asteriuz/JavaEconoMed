@@ -1,4 +1,4 @@
-package br.com.fiap.economed.dto;
+package br.com.fiap.economed.dto.clienteEndereco;
 
 import br.com.fiap.economed.model.EnderecoCliente;
 
