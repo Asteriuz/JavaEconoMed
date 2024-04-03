@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "fa91fbf7-ff3a-4037-89c1-d372c4de3c71",
+		"name": "EconoMed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28755125"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cliente/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"Augusto Barcelos Barros\",\n  \"telefone\": \"11997434003\",\n  \"email\": \"augusto@email.com\",\n  \"dataNascimento\": \"2002-12-26\",\n  \"cpf\": \"123.456.789-00\",\n  \"estadoCivil\": \"Namorando\",\n  \"convenioId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"João Neto\",\n  \"telefone\": \"11223344\",\n  \"email\": \"joao.silva@email.com\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"cpf\": \"123.456.789-00\",\n  \"estadoCivil\": \"Solteiro\",\n  \"convenioId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cliente/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/cliente/202"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EnderecoCliente",
+			"item": [
+				{
+					"name": "FindByClienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cliente/1/endereco"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"clienteId\": 1,\n  \"rua\": \"Rua dos Clientes\",\n  \"numero\": \"123\",\n  \"cidade\": \"Cidade Cliente\",\n  \"estado\": \"Estado Cliente\",\n  \"cep\": \"12345-678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/endereco-cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rua\": \"Rua dos Clientes 2\",\n  \"numero\": \"123\",\n  \"cidade\": \"Cidade Cliente\",\n  \"estado\": \"Estado Cliente\",\n  \"cep\": \"12345-678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/endereco-cliente/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HistoricoHospitalCliente",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteId\": 1,\r\n    \"dataRegistro\": \"2021-10-10\",\r\n    \"historicoMedico\": \"Dor de cabeça\",\r\n    \"examesRealizados\": \"Ressonância magnética\",\r\n    \"medicamentosPrescritos\": \"Dipirona\",\r\n    \"observacoes\": \"Paciente com histórico de enxaqueca\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/historico-hospital-cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "FindByClienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cliente/1/historico-hospitalar"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"historicoMedico\": \"Cirurgia de apendicite em 2014\",\r\n    \"examesRealizados\": \"Exames de rotina\",\r\n    \"medicamentosPrescritos\": \"Paracetamol\",\r\n    \"observacoes\": \"Nenhuma observação\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cliente/1/historico-hospitalar"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HistoricoSaudeCliente",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteId\": 1,\r\n    \"dataRegistro\": \"2021-08-01\",\r\n    \"fumo\": \"Nunca fumou\",\r\n    \"doencaPrincipal\": \"Hipertensão\",\r\n    \"historicoFamiliar\": \"Pai com diabetes\",\r\n    \"alergias\": \"Nenhuma\",\r\n    \"observacoes\": \"Paciente com histórico de hipertensão\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/historico-saude-cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "FindByClienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/cliente/1/historico-saude"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fumo\": \"Nunca fumou!\",\r\n    \"doencaPrincipal\": \"Hipertensão\",\r\n    \"historicoFamiliar\": \"Nenhum histórico relevante\",\r\n    \"alergias\": \"Nenhuma alergia conhecida\",\r\n    \"observacoes\": \"Sem observações\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cliente/1/historico-saude"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Convenio",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/convenio"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/convenio/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Convenio C\",\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/convenio"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Convenio D\",\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/convenio/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/convenio/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/empresa"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/empresa/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa J\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/empresa"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa Porto Seguro\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/empresa/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/empresa/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unidade",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/unidade"
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/unidade/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Unidade Z\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 100,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/unidade"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Unidade Amaral\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 100,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/unidade/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/unidade/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EnderecoUnidade",
+			"item": [
+				{
+					"name": "FindByClienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/unidade/1/endereco"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"unidadeId\": 1,\n  \"rua\": \"Rua da Unidade A\",\n  \"numero\": \"789\",\n  \"cidade\": \"Cidade Unidade\",\n  \"estado\": \"Estado Unidade\",\n  \"cep\": \"54321-098\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/endereco-unidade"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rua\": \"Rua da Unidade A\",\n    \"numero\": \"789\",\n    \"cidade\": \"Cidade da Unidade\",\n    \"estado\": \"Estado da Unidade\",\n    \"cep\": \"54321-098\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/unidade/1/endereco"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

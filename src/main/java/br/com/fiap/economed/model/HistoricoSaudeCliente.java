@@ -1,5 +1,6 @@
 package br.com.fiap.economed.model;
 
+import br.com.fiap.economed.dto.historicoSaudeCliente.AtualizacaoHistoricoSaudeClienteDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,9 +31,11 @@ public class HistoricoSaudeCliente {
     @Column(name = "data_registro")
     private LocalDate dataRegistro;
 
+    //TODO: Transformar isso aqui em boolean pls
     @Column(name = "fumo", length = 20)
     private String fumo;
 
+    //TODO: Trocar por um array de string "doenças"?
     @Column(name = "doenca_principal", length = 100)
     private String doencaPrincipal;
 
@@ -53,6 +56,24 @@ public class HistoricoSaudeCliente {
         this.historicoFamiliar = dto.historicoFamiliar();
         this.alergias = dto.alergias();
         this.observacoes = dto.observacoes();
+    }
+
+    public void atualizarDados(AtualizacaoHistoricoSaudeClienteDto dto) {
+        if (dto.fumo() != null) {
+            fumo = dto.fumo();
+        }
+        if (dto.doencaPrincipal() != null) {
+            doencaPrincipal = dto.doencaPrincipal();
+        }
+        if (dto.historicoFamiliar() != null) {
+            historicoFamiliar = dto.historicoFamiliar();
+        }
+        if (dto.alergias() != null) {
+            alergias = dto.alergias();
+        }
+        if (dto.observacoes() != null) {
+            observacoes = dto.observacoes();
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package br.com.fiap.economed.model;
 
+import br.com.fiap.economed.dto.historicoHospitalCliente.AtualizacaoHistoricoHospitalClienteDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,6 +50,24 @@ public class HistoricoHospitalCliente {
         this.examesRealizados = dto.examesRealizados();
         this.medicamentosPrescritos = dto.medicamentosPrescritos();
         this.observacoes = dto.observacoes();
+    }
+
+    public void atualizarDados(AtualizacaoHistoricoHospitalClienteDto dto) {
+        if (dto.dataRegistro() != null) {
+            this.dataRegistro = dto.dataRegistro();
+        }
+        if (dto.historicoMedico() != null) {
+            this.historicoMedico = dto.historicoMedico();
+        }
+        if (dto.examesRealizados() != null) {
+            this.examesRealizados = dto.examesRealizados();
+        }
+        if (dto.medicamentosPrescritos() != null) {
+            this.medicamentosPrescritos = dto.medicamentosPrescritos();
+        }
+        if (dto.observacoes() != null) {
+            this.observacoes = dto.observacoes();
+        }
     }
 
 }

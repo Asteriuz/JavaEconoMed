@@ -1,6 +1,7 @@
 package br.com.fiap.economed.model;
 
 import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
+import br.com.fiap.economed.model.enums.EstadoCivilCliente;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,15 +44,11 @@ public class Cliente {
     @Column(name = "cpf", length = 20)
     private String cpf;
 
-    //TODO: Transformar em enum
-    @Column(name = "estado_civil", length = 20)
+    @Column(name = "estado_civil", length = 20) //TODO: Não funciona com enum
     private String estadoCivil;
 
     @Column(name = "convenio_id")
     private Long convenioId;
-    
-    @Transient // Testando Transient por curiosidade, apagar depois
-    private String token;
 
     public Cliente(CadastroClienteDto dto) {
         this.rg = dto.rg();
@@ -65,14 +62,30 @@ public class Cliente {
     }
 
     public void atualizarDados(AtualizacaoClienteDto dto) {
-        this.rg = dto.rg();
-        this.nome = dto.nome();
-        this.telefone = dto.telefone();
-        this.email = dto.email();
-        this.dataNascimento = dto.dataNascimento();
-        this.cpf = dto.cpf();
-        this.estadoCivil = dto.estadoCivil();
-        this.convenioId = dto.convenioId();
+        if (dto.rg() != null) {
+            this.rg = dto.rg();
+        }
+        if (dto.nome() != null) {
+            this.nome = dto.nome();
+        }
+        if (dto.telefone() != null) {
+            this.telefone = dto.telefone();
+        }
+        if (dto.email() != null) {
+            this.email = dto.email();
+        }
+        if (dto.dataNascimento() != null) {
+            this.dataNascimento = dto.dataNascimento();
+        }
+        if (dto.cpf() != null) {
+            this.cpf = dto.cpf();
+        }
+        if (dto.estadoCivil() != null) {
+            this.estadoCivil = dto.estadoCivil();
+        }
+        if (dto.convenioId() != null) {
+            this.convenioId = dto.convenioId();
+        }
     }
 
 }

@@ -1,7 +1,10 @@
 package br.com.fiap.economed.controller;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -22,18 +25,17 @@ public class UnidadeController {
     @Autowired
     private UnidadeRepository unidadeRepository;
 
-    // TODO: Implementar paginaçâo e ordenação, criar statusCode exceptions
-
     @GetMapping
-    public ResponseEntity<List<DetalhesUnidadeDto>> listar() {
-        var unidades = unidadeRepository.findAll().stream().map(DetalhesUnidadeDto::new).toList();
-        return ResponseEntity.ok(unidades);
+    public ResponseEntity<Page<DetalhesUnidadeDto>> listar(Pageable paginacao) {
+        var PaginaUnidades = unidadeRepository.findAll(paginacao).map(DetalhesUnidadeDto::new);
+        return ResponseEntity.ok(PaginaUnidades);
     }
 
     @GetMapping("/{unidadeId}")
     public ResponseEntity<DetalhesUnidadeDto> buscar(@PathVariable("unidadeId") Long unidadeId)
-            throws ChangeSetPersister.NotFoundException {
-        var unidade = unidadeRepository.findById(unidadeId).orElseThrow(ChangeSetPersister.NotFoundException::new);
+            throws EntityNotFoundException {
+        var unidade = unidadeRepository.findById(unidadeId)
+                .orElseThrow(EntityNotFoundException::new);
         return ResponseEntity.ok(new DetalhesUnidadeDto(unidade));
     }
 
@@ -50,16 +52,19 @@ public class UnidadeController {
     @PutMapping("/{unidadeId}")
     @Transactional
     public ResponseEntity<DetalhesUnidadeDto> atualizar(@PathVariable("unidadeId") Long unidadeId,
-            @RequestBody AtualizacaoUnidadeDto clienteDto) throws ChangeSetPersister.NotFoundException {
-        var unidade = unidadeRepository.findById(unidadeId).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        unidade.atualizarDados(clienteDto);
+            @RequestBody AtualizacaoUnidadeDto unidadeDto) throws EntityNotFoundException {
+        var unidade = unidadeRepository.findById(unidadeId)
+                .orElseThrow(EntityNotFoundException::new);
+        unidade.atualizarDados(unidadeDto);
         return ResponseEntity.ok(new DetalhesUnidadeDto(unidade));
     }
 
     @DeleteMapping("/{unidadeId}")
     @Transactional
-    public ResponseEntity<Void> deletar(@PathVariable("unidadeId") Long unidadeId) {
-        unidadeRepository.deleteById(unidadeId);
+    public ResponseEntity<Void> remover(@PathVariable("unidadeId") Long unidadeId) throws EntityNotFoundException {
+        var unidade = unidadeRepository.findById(unidadeId)
+                .orElseThrow(EntityNotFoundException::new);
+        unidadeRepository.delete(unidade);
         return ResponseEntity.noContent().build();
     }
 }

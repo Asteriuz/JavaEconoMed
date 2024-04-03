@@ -34,6 +34,7 @@ public class Convenio {
     @Column(name = "valor")
     private Double valor;
 
+    //TODO: Quais tipos de serviços podem ser oferecidos? Vamos criar um enum pra isso?
     @Column(name = "tipo_servico", length = 100)
     private String tipoServico;
 
@@ -57,12 +58,24 @@ public class Convenio {
     }
 
     public void atualizarDados(AtualizacaoConvenioDto dto) {
-        this.nome = dto.nome();
-        this.valor = dto.valor();
-        this.tipoServico = dto.tipoServico();
-        this.cobertura = dto.cobertura();
-        this.contato = dto.contato();
-        this.validade = dto.validade();
+        if (dto.nome() != null) {
+            this.nome = dto.nome();
+        }
+        if (dto.valor() != null) {
+            this.valor = dto.valor();
+        }
+        if (dto.tipoServico() != null) {
+            this.tipoServico = dto.tipoServico();
+        }
+        if (dto.cobertura() != null) {
+            this.cobertura = dto.cobertura();
+        }
+        if (dto.contato() != null) {
+            this.contato = dto.contato();
+        }
+        if (dto.validade() != null) {
+            this.validade = dto.validade();
+        }
     }
 
 }

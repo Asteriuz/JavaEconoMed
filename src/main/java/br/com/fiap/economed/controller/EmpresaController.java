@@ -1,7 +1,10 @@
 package br.com.fiap.economed.controller;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -22,18 +25,17 @@ public class EmpresaController {
     @Autowired
     private EmpresaRepository empresaRepository;
 
-    // TODO: Implementar paginaçâo e ordenação, criar statusCode exceptions
-
     @GetMapping
-    public ResponseEntity<List<DetalhesEmpresaDto>> listar() {
-        var empresas = empresaRepository.findAll().stream().map(DetalhesEmpresaDto::new).toList();
-        return ResponseEntity.ok(empresas);
+    public ResponseEntity<Page<DetalhesEmpresaDto>> listar(Pageable paginacao) {
+        var PaginaEmpresas = empresaRepository.findAll(paginacao).map(DetalhesEmpresaDto::new);
+        return ResponseEntity.ok(PaginaEmpresas);
     }
 
     @GetMapping("/{empresaId}")
     public ResponseEntity<DetalhesEmpresaDto> buscar(@PathVariable("empresaId") Long empresaId)
-            throws ChangeSetPersister.NotFoundException {
-        var empresa = empresaRepository.findById(empresaId).orElseThrow(ChangeSetPersister.NotFoundException::new);
+            throws EntityNotFoundException {
+        var empresa = empresaRepository.findById(empresaId).
+                orElseThrow(EntityNotFoundException::new);
         return ResponseEntity.ok(new DetalhesEmpresaDto(empresa));
     }
 
@@ -50,16 +52,19 @@ public class EmpresaController {
     @PutMapping("/{empresaId}")
     @Transactional
     public ResponseEntity<DetalhesEmpresaDto> atualizar(@PathVariable("empresaId") Long empresaId,
-            @RequestBody AtualizacaoEmpresaDto clienteDto) throws ChangeSetPersister.NotFoundException {
-        var empresa = empresaRepository.findById(empresaId).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        empresa.atualizarDados(clienteDto);
+            @RequestBody AtualizacaoEmpresaDto empresaDto) throws EntityNotFoundException {
+        var empresa = empresaRepository.findById(empresaId).
+                orElseThrow(EntityNotFoundException::new);
+        empresa.atualizarDados(empresaDto);
         return ResponseEntity.ok(new DetalhesEmpresaDto(empresa));
     }
 
     @DeleteMapping("/{empresaId}")
     @Transactional
-    public ResponseEntity<Void> deletar(@PathVariable("empresaId") Long empresaId) {
-        empresaRepository.deleteById(empresaId);
+    public ResponseEntity<Void> remover(@PathVariable("empresaId") Long empresaId) throws EntityNotFoundException {
+        var empresa = empresaRepository.findById(empresaId).
+                orElseThrow(EntityNotFoundException::new);
+        empresaRepository.delete(empresa);
         return ResponseEntity.noContent().build();
     }
 }

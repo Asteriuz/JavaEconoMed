@@ -1,5 +1,7 @@
 package br.com.fiap.economed.dto.cliente;
 
+import br.com.fiap.economed.model.enums.EstadoCivilCliente;
+
 import java.time.LocalDate;
 
 public record CadastroClienteDto(

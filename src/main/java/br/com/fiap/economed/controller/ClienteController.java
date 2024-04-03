@@ -1,8 +1,12 @@
 package br.com.fiap.economed.controller;
 
 import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -22,45 +26,47 @@ public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    //TODO: Implementar paginaçâo e ordenação, criar statusCode exceptions
-
     @GetMapping
-    public ResponseEntity<List<DetalhesClienteDto>> listar() {
-        var clientes = clienteRepository.findAll().stream().map(DetalhesClienteDto::new).toList();
-        return ResponseEntity.ok(clientes);
+    public ResponseEntity<Page<DetalhesClienteDto>> listar(Pageable paginacao) {
+        var paginaClientes = clienteRepository.findAll(paginacao).map(DetalhesClienteDto::new);
+        return ResponseEntity.ok(paginaClientes);
     }
 
     @GetMapping("/{clienteId}")
-    public ResponseEntity<DetalhesClienteDto> buscar(@PathVariable("clienteId") Long clienteId) throws ChangeSetPersister.NotFoundException {
+    public ResponseEntity<DetalhesClienteDto> buscar(@PathVariable("clienteId") Long clienteId)
+            throws EntityNotFoundException {
         var cliente = clienteRepository.findById(clienteId).
-                orElseThrow(ChangeSetPersister.NotFoundException::new);
+                orElseThrow(EntityNotFoundException::new);
         return ResponseEntity.ok(new DetalhesClienteDto(cliente));
     }
 
     @PostMapping
     @Transactional
     public ResponseEntity<DetalhesClienteDto> cadastrar(@RequestBody CadastroClienteDto clienteDto,
-            UriComponentsBuilder uriBuilder) {
+            UriComponentsBuilder uri) {
         var cliente = new Cliente(clienteDto);
         clienteRepository.save(cliente);
-        var uri = uriBuilder.path("/cliente/{clienteId}").buildAndExpand(cliente.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DetalhesClienteDto(cliente));
+        var url = uri.path("/cliente/{clienteId}").buildAndExpand(cliente.getId()).toUri();
+        return ResponseEntity.created(url).body(new DetalhesClienteDto(cliente));
     }
 
     @PutMapping("/{clienteId}")
     @Transactional
     public ResponseEntity<DetalhesClienteDto> atualizar(@PathVariable("clienteId") Long clienteId,
-            @RequestBody AtualizacaoClienteDto clienteDto) throws ChangeSetPersister.NotFoundException {
+            @RequestBody AtualizacaoClienteDto clienteDto) throws EntityNotFoundException {
         var cliente = clienteRepository.findById(clienteId).
-                orElseThrow(ChangeSetPersister.NotFoundException::new);
+                orElseThrow(EntityNotFoundException::new);
         cliente.atualizarDados(clienteDto);
         return ResponseEntity.ok(new DetalhesClienteDto(cliente));
     }
 
     @DeleteMapping("/{clienteId}")
     @Transactional
-    public ResponseEntity<Void> deletar(@PathVariable("clienteId") Long clienteId) {
-        clienteRepository.deleteById(clienteId);
+    public ResponseEntity<Void> remover(@PathVariable("clienteId") Long clienteId) throws EntityNotFoundException {
+        var cliente = clienteRepository.findById(clienteId).
+                orElseThrow(EntityNotFoundException::new);
+        clienteRepository.delete(cliente);
         return ResponseEntity.noContent().build();
     }
+
 }

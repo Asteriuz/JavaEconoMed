@@ -1,7 +1,10 @@
 package br.com.fiap.economed.controller;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -22,18 +25,17 @@ public class ConvenioController {
     @Autowired
     private ConvenioRepository convenioRepository;
 
-    // TODO: Implementar paginaçâo e ordenação, criar statusCode exceptions
-
     @GetMapping
-    public ResponseEntity<List<DetalhesConvenioDto>> listar() {
-        var convenios = convenioRepository.findAll().stream().map(DetalhesConvenioDto::new).toList();
-        return ResponseEntity.ok(convenios);
+    public ResponseEntity<Page<DetalhesConvenioDto>> listar(Pageable paginacao) {
+        var PaginaConvenios = convenioRepository.findAll(paginacao).map(DetalhesConvenioDto::new);
+        return ResponseEntity.ok(PaginaConvenios);
     }
 
     @GetMapping("/{convenioId}")
     public ResponseEntity<DetalhesConvenioDto> buscar(@PathVariable("convenioId") Long convenioId)
-            throws ChangeSetPersister.NotFoundException {
-        var convenio = convenioRepository.findById(convenioId).orElseThrow(ChangeSetPersister.NotFoundException::new);
+            throws EntityNotFoundException {
+        var convenio = convenioRepository.findById(convenioId).
+                orElseThrow(EntityNotFoundException::new);
         return ResponseEntity.ok(new DetalhesConvenioDto(convenio));
     }
 
@@ -50,16 +52,19 @@ public class ConvenioController {
     @PutMapping("/{convenioId}")
     @Transactional
     public ResponseEntity<DetalhesConvenioDto> atualizar(@PathVariable("convenioId") Long convenioId,
-            @RequestBody AtualizacaoConvenioDto clienteDto) throws ChangeSetPersister.NotFoundException {
-        var convenio = convenioRepository.findById(convenioId).orElseThrow(ChangeSetPersister.NotFoundException::new);
-        convenio.atualizarDados(clienteDto);
+            @RequestBody AtualizacaoConvenioDto convenioDto) throws EntityNotFoundException {
+        var convenio = convenioRepository.findById(convenioId).
+                orElseThrow(EntityNotFoundException::new);
+        convenio.atualizarDados(convenioDto);
         return ResponseEntity.ok(new DetalhesConvenioDto(convenio));
     }
 
     @DeleteMapping("/{convenioId}")
     @Transactional
-    public ResponseEntity<Void> deletar(@PathVariable("convenioId") Long convenioId) {
-        convenioRepository.deleteById(convenioId);
+    public ResponseEntity<Void> remover(@PathVariable("convenioId") Long convenioId) throws EntityNotFoundException {
+        var convenio = convenioRepository.findById(convenioId).
+                orElseThrow(EntityNotFoundException::new);
+        convenioRepository.delete(convenio);
         return ResponseEntity.noContent().build();
     }
 }
