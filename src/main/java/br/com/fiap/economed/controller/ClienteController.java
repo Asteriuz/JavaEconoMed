@@ -31,8 +31,7 @@ public class ClienteController {
     @GetMapping("/{clienteId}")
     public ResponseEntity<DetalhesClienteDto> buscar(@PathVariable("clienteId") Long clienteId)
             throws EntityNotFoundException {
-        var cliente = clienteRepository.findById(clienteId).
-                orElseThrow(EntityNotFoundException::new);
+        var cliente = clienteRepository.findById(clienteId).orElseThrow(EntityNotFoundException::new);
         return ResponseEntity.ok(new DetalhesClienteDto(cliente));
     }
 
@@ -50,8 +49,7 @@ public class ClienteController {
     @Transactional
     public ResponseEntity<DetalhesClienteDto> atualizar(@PathVariable("clienteId") Long clienteId,
             @RequestBody AtualizacaoClienteDto clienteDto) throws EntityNotFoundException {
-        var cliente = clienteRepository.findById(clienteId).
-                orElseThrow(EntityNotFoundException::new);
+        var cliente = clienteRepository.findById(clienteId).orElseThrow(EntityNotFoundException::new);
         cliente.atualizarDados(clienteDto);
         return ResponseEntity.ok(new DetalhesClienteDto(cliente));
     }
@@ -59,8 +57,7 @@ public class ClienteController {
     @DeleteMapping("/{clienteId}")
     @Transactional
     public ResponseEntity<Void> remover(@PathVariable("clienteId") Long clienteId) throws EntityNotFoundException {
-        var cliente = clienteRepository.findById(clienteId).
-                orElseThrow(EntityNotFoundException::new);
+        var cliente = clienteRepository.findById(clienteId).orElseThrow(EntityNotFoundException::new);
         clienteRepository.delete(cliente);
         return ResponseEntity.noContent().build();
     }

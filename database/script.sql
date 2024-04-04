@@ -114,7 +114,7 @@ CREATE TABLE CP1_UNIDADE (
 
 CREATE TABLE CP1_ENDERECO_UNIDADE (
     ID NUMBER DEFAULT CP1_ENDERECO_UNIDADE_SEQ.NEXTVAL PRIMARY KEY,
-    UNIDADE_ID NUMBER UNIQUE,
+    UNIDADE_ID NUMBER UNIQUE NOT NULL,
     RUA VARCHAR(100),
     NUMERO VARCHAR(10),
     CIDADE VARCHAR(100),
@@ -134,8 +134,8 @@ CREATE TABLE CP1_MEDICO (
 
 CREATE TABLE CP1_MEDICO_UNIDADE (
     ID NUMBER DEFAULT CP1_MEDICO_UNIDADE_SEQ.NEXTVAL PRIMARY KEY,
-    MEDICO_ID NUMBER,
-    UNIDADE_ID NUMBER,
+    MEDICO_ID NUMBER NOT NULL,
+    UNIDADE_ID NUMBER NOT NULL,
     HORARIO_ATENDIMENTO VARCHAR(100),
     FOREIGN KEY (MEDICO_ID) REFERENCES CP1_MEDICO(ID),
     FOREIGN KEY (UNIDADE_ID) REFERENCES CP1_UNIDADE(ID)
@@ -156,7 +156,7 @@ CREATE TABLE CP1_CLIENTE (
 
 CREATE TABLE CP1_ENDERECO_CLIENTE (
     ID NUMBER DEFAULT CP1_ENDERECO_CLIENTE_SEQ.NEXTVAL PRIMARY KEY,
-    CLIENTE_ID NUMBER UNIQUE,
+    CLIENTE_ID NUMBER UNIQUE NOT NULL,
     RUA VARCHAR(100),
     NUMERO VARCHAR(10),
     CIDADE VARCHAR(100),
@@ -167,7 +167,7 @@ CREATE TABLE CP1_ENDERECO_CLIENTE (
 
 CREATE TABLE CP1_HISTORICO_SAUDE_CLIENTE (
     ID NUMBER DEFAULT CP1_HISTORICO_SAUDE_CLIENTE_SEQ.NEXTVAL PRIMARY KEY,
-    CLIENTE_ID NUMBER UNIQUE,
+    CLIENTE_ID NUMBER UNIQUE NOT NULL,
     DATA_REGISTRO DATE,
     FUMA NUMBER(1) CHECK (FUMA IN (0, 1)),
     DOENCA_PRINCIPAL VARCHAR(100),
@@ -179,7 +179,7 @@ CREATE TABLE CP1_HISTORICO_SAUDE_CLIENTE (
 
 CREATE TABLE CP1_HISTORICO_HOSPITAL_CLIENTE (
     ID NUMBER DEFAULT CP1_HISTORICO_HOSPITAL_CLIENTE_SEQ.NEXTVAL PRIMARY KEY,
-    CLIENTE_ID NUMBER UNIQUE,
+    CLIENTE_ID NUMBER UNIQUE NOT NULL,
     DATA_REGISTRO DATE,
     HISTORICO_MEDICO VARCHAR(100),
     EXAMES_REALIZADOS VARCHAR(100),
@@ -220,6 +220,54 @@ INSERT INTO CP1_EMPRESA (
     'Atendimento médico geral'
 );
 
+INSERT INTO CP1_EMPRESA (
+    CNPJ,
+    NOME,
+    TIPO,
+    TELEFONE,
+    EMAIL,
+    AREA_ATUACAO
+) VALUES (
+    '98765432101234',
+    'Empresa Z',
+    'Saúde',
+    '55443311',
+    'empresa.y@email.com',
+    'Atendimento médico pediatrico'
+);
+
+INSERT INTO CP1_EMPRESA (
+    CNPJ,
+    NOME,
+    TIPO,
+    TELEFONE,
+    EMAIL,
+    AREA_ATUACAO
+) VALUES (
+    '98765432101235',
+    'Empresa G',
+    'Saúde',
+    '55444411',
+    'empresa.y@email.com',
+    'Atendimento médico'
+);
+
+INSERT INTO CP1_EMPRESA (
+    CNPJ,
+    NOME,
+    TIPO,
+    TELEFONE,
+    EMAIL,
+    AREA_ATUACAO
+) VALUES (
+    '98765432102222',
+    'Empresa H',
+    'Saúde',
+    '88443311',
+    'empresa.y@email.com',
+    'Atendimento médico geral'
+);
+
 INSERT INTO CP1_CONVENIO (
     EMPRESA_ID,
     NOME,
@@ -254,6 +302,60 @@ INSERT INTO CP1_CONVENIO (
     'Consultas, exames básicos e especializados',
     'contato@conveniob.com',
     TO_DATE('2026-06-30', 'YYYY-MM-DD')
+);
+
+INSERT INTO CP1_CONVENIO (
+    EMPRESA_ID,
+    NOME,
+    VALOR,
+    TIPO_SERVICO,
+    COBERTURA,
+    CONTATO,
+    VALIDADE
+) VALUES (
+    2,
+    'Convenio B',
+    600.00,
+    'Consulta e Exames',
+    'Consultas, exames básicos e especializados',
+    'contato@conveniob.com',
+    TO_DATE('2026-06-30', 'YYYY-MM-DD')
+);
+
+INSERT INTO CP1_CONVENIO (
+    EMPRESA_ID,
+    NOME,
+    VALOR,
+    TIPO_SERVICO,
+    COBERTURA,
+    CONTATO,
+    VALIDADE
+) VALUES (
+    3,
+    'Convenio C',
+    700.00,
+    'Cirurgia',
+    'Procedimentos cirúrgicos e acompanhamento pós-operatório',
+    'contato@convenioc.com',
+    TO_DATE('2027-01-15', 'YYYY-MM-DD')
+);
+
+INSERT INTO CP1_CONVENIO (
+    EMPRESA_ID,
+    NOME,
+    VALOR,
+    TIPO_SERVICO,
+    COBERTURA,
+    CONTATO,
+    VALIDADE
+) VALUES (
+    4,
+    'Convenio D',
+    800.00,
+    'Fisioterapia',
+    'Sessões de fisioterapia e acompanhamento especializado',
+    'contato@conveniod.com',
+    TO_DATE('2026-12-31', 'YYYY-MM-DD')
 );
 
 INSERT INTO CP1_UNIDADE (
@@ -292,6 +394,60 @@ INSERT INTO CP1_UNIDADE (
     'Clínica geral'
 );
 
+INSERT INTO CP1_UNIDADE (
+    EMPRESA_ID,
+    NOME,
+    TELEFONE,
+    EMAIL,
+    TIPO,
+    CAPACIDADE,
+    ESPECIALIDADES
+) VALUES (
+    2,
+    'Unidade B',
+    '22334455',
+    'unidade.b@email.com',
+    'Clínica',
+    50,
+    'Pediatria, Ginecologia'
+);
+
+INSERT INTO CP1_UNIDADE (
+    EMPRESA_ID,
+    NOME,
+    TELEFONE,
+    EMAIL,
+    TIPO,
+    CAPACIDADE,
+    ESPECIALIDADES
+) VALUES (
+    3,
+    'Unidade C',
+    '33445566',
+    'unidade.c@email.com',
+    'Consultório',
+    20,
+    'Dermatologia, Oftalmologia'
+);
+
+INSERT INTO CP1_UNIDADE (
+    EMPRESA_ID,
+    NOME,
+    TELEFONE,
+    EMAIL,
+    TIPO,
+    CAPACIDADE,
+    ESPECIALIDADES
+) VALUES (
+    4,
+    'Unidade D',
+    '44556677',
+    'unidade.d@email.com',
+    'Laboratório',
+    30,
+    'Análises Clínicas, Patologia'
+);
+
 INSERT INTO CP1_ENDERECO_UNIDADE (
     UNIDADE_ID,
     RUA,
@@ -324,6 +480,54 @@ INSERT INTO CP1_ENDERECO_UNIDADE (
     '98765-432'
 );
 
+INSERT INTO CP1_ENDERECO_UNIDADE (
+    UNIDADE_ID,
+    RUA,
+    NUMERO,
+    CIDADE,
+    ESTADO,
+    CEP
+) VALUES (
+    3,
+    'Avenida Principal',
+    '200',
+    'Cidade da Unidade C',
+    'Estado da Unidade C',
+    '12345-678'
+);
+
+INSERT INTO CP1_ENDERECO_UNIDADE (
+    UNIDADE_ID,
+    RUA,
+    NUMERO,
+    CIDADE,
+    ESTADO,
+    CEP
+) VALUES (
+    4,
+    'Rua da Unidade D',
+    '50',
+    'Cidade Unidade D',
+    'Estado Unidade D',
+    '54321-876'
+);
+
+INSERT INTO CP1_ENDERECO_UNIDADE (
+    UNIDADE_ID,
+    RUA,
+    NUMERO,
+    CIDADE,
+    ESTADO,
+    CEP
+) VALUES (
+    5,
+    'Avenida Central',
+    '300',
+    'Cidade da Unidade E',
+    'Estado da Unidade E',
+    '13579-246'
+);
+
 INSERT INTO CP1_MEDICO (
     NOME,
     TELEFONE,
@@ -352,6 +556,48 @@ INSERT INTO CP1_MEDICO (
     '54321'
 );
 
+INSERT INTO CP1_MEDICO (
+    NOME,
+    TELEFONE,
+    EMAIL,
+    ESPECIALIDADE,
+    CRM
+) VALUES (
+    'Dr. Marcos Santos',
+    '99887766',
+    'marcos.santos@email.com',
+    'Ortopedia',
+    '12345'
+);
+
+INSERT INTO CP1_MEDICO (
+    NOME,
+    TELEFONE,
+    EMAIL,
+    ESPECIALIDADE,
+    CRM
+) VALUES (
+    'Dra. Carolina Mendes',
+    '77665544',
+    'carolina.mendes@email.com',
+    'Pediatria',
+    '54321'
+);
+
+INSERT INTO CP1_MEDICO (
+    NOME,
+    TELEFONE,
+    EMAIL,
+    ESPECIALIDADE,
+    CRM
+) VALUES (
+    'Dr. Pedro Alves',
+    '33221100',
+    'pedro.alves@email.com',
+    'Cardiologia',
+    '67890'
+);
+
 INSERT INTO CP1_MEDICO_UNIDADE (
     MEDICO_ID,
     UNIDADE_ID,
@@ -370,6 +616,36 @@ INSERT INTO CP1_MEDICO_UNIDADE (
     2,
     2,
     'Segunda a Sexta, 09:00 - 18:00'
+);
+
+INSERT INTO CP1_MEDICO_UNIDADE (
+    MEDICO_ID,
+    UNIDADE_ID,
+    HORARIO_ATENDIMENTO
+) VALUES (
+    3,
+    3,
+    'Segunda a Sexta, 08:00 - 17:00'
+);
+
+INSERT INTO CP1_MEDICO_UNIDADE (
+    MEDICO_ID,
+    UNIDADE_ID,
+    HORARIO_ATENDIMENTO
+) VALUES (
+    4,
+    4,
+    'Segunda a Sábado, 10:00 - 20:00'
+);
+
+INSERT INTO CP1_MEDICO_UNIDADE (
+    MEDICO_ID,
+    UNIDADE_ID,
+    HORARIO_ATENDIMENTO
+) VALUES (
+    5,
+    5,
+    'Segunda a Quinta, 07:00 - 16:00; Sexta, 07:00 - 12:00'
 );
 
 INSERT INTO CP1_CLIENTE (
@@ -412,6 +688,66 @@ INSERT INTO CP1_CLIENTE (
     2
 );
 
+INSERT INTO CP1_CLIENTE (
+    RG,
+    NOME,
+    TELEFONE,
+    EMAIL,
+    DATA_NASCIMENTO,
+    CPF,
+    ESTADO_CIVIL,
+    CONVENIO_ID
+) VALUES (
+    '123456789',
+    'João Silva',
+    '99887766',
+    'joao.silva@email.com',
+    TO_DATE('1990-08-20', 'YYYY-MM-DD'),
+    '123.456.789-00',
+    'Solteiro',
+    1
+);
+
+INSERT INTO CP1_CLIENTE (
+    RG,
+    NOME,
+    TELEFONE,
+    EMAIL,
+    DATA_NASCIMENTO,
+    CPF,
+    ESTADO_CIVIL,
+    CONVENIO_ID
+) VALUES (
+    '234567890',
+    'Ana Oliveira',
+    '77665544',
+    'ana.oliveira@email.com',
+    TO_DATE('1980-03-15', 'YYYY-MM-DD'),
+    '234.567.890-00',
+    'Casado',
+    3
+);
+
+INSERT INTO CP1_CLIENTE (
+    RG,
+    NOME,
+    TELEFONE,
+    EMAIL,
+    DATA_NASCIMENTO,
+    CPF,
+    ESTADO_CIVIL,
+    CONVENIO_ID
+) VALUES (
+    '345678901',
+    'Carlos Pereira',
+    '33221100',
+    'carlos.pereira@email.com',
+    TO_DATE('1975-12-05', 'YYYY-MM-DD'),
+    '345.678.901-00',
+    'Divorciado',
+    4
+);
+
 INSERT INTO CP1_ENDERECO_CLIENTE (
     CLIENTE_ID,
     RUA,
@@ -442,6 +778,54 @@ INSERT INTO CP1_ENDERECO_CLIENTE (
     'Cidade dos Clientes',
     'Estado dos Clientes',
     '54321-098'
+);
+
+INSERT INTO CP1_ENDERECO_CLIENTE (
+    CLIENTE_ID,
+    RUA,
+    NUMERO,
+    CIDADE,
+    ESTADO,
+    CEP
+) VALUES (
+    3,
+    'Rua das Palmeiras',
+    '789',
+    'Cidade dos Clientes',
+    'Estado dos Clientes',
+    '12345-678'
+);
+
+INSERT INTO CP1_ENDERECO_CLIENTE (
+    CLIENTE_ID,
+    RUA,
+    NUMERO,
+    CIDADE,
+    ESTADO,
+    CEP
+) VALUES (
+    4,
+    'Avenida Central',
+    '101',
+    'Cidade Nova',
+    'Estado do Norte',
+    '87654-321'
+);
+
+INSERT INTO CP1_ENDERECO_CLIENTE (
+    CLIENTE_ID,
+    RUA,
+    NUMERO,
+    CIDADE,
+    ESTADO,
+    CEP
+) VALUES (
+    5,
+    'Rua dos Girassóis',
+    '222',
+    'Cidade dos Clientes',
+    'Estado dos Clientes',
+    '13579-246'
 );
 
 INSERT INTO CP1_HISTORICO_SAUDE_CLIENTE (
@@ -480,6 +864,60 @@ INSERT INTO CP1_HISTORICO_SAUDE_CLIENTE (
     'Sem observações'
 );
 
+INSERT INTO CP1_HISTORICO_SAUDE_CLIENTE (
+    CLIENTE_ID,
+    DATA_REGISTRO,
+    FUMA,
+    DOENCA_PRINCIPAL,
+    HISTORICO_FAMILIAR,
+    ALERGIAS,
+    OBSERVACOES
+) VALUES (
+    3,
+    TO_DATE('2022-01-10', 'YYYY-MM-DD'),
+    0,
+    'Asma',
+    'Histórico de asma na família',
+    'Pólen',
+    'Cliente tem episódios ocasionais de asma'
+);
+
+INSERT INTO CP1_HISTORICO_SAUDE_CLIENTE (
+    CLIENTE_ID,
+    DATA_REGISTRO,
+    FUMA,
+    DOENCA_PRINCIPAL,
+    HISTORICO_FAMILIAR,
+    ALERGIAS,
+    OBSERVACOES
+) VALUES (
+    4,
+    TO_DATE('2022-05-20', 'YYYY-MM-DD'),
+    1,
+    'Hipertensão',
+    'Histórico de hipertensão na família',
+    'Nenhuma alergia conhecida',
+    'Cliente está sob medicação para controle da pressão arterial'
+);
+
+INSERT INTO CP1_HISTORICO_SAUDE_CLIENTE (
+    CLIENTE_ID,
+    DATA_REGISTRO,
+    FUMA,
+    DOENCA_PRINCIPAL,
+    HISTORICO_FAMILIAR,
+    ALERGIAS,
+    OBSERVACOES
+) VALUES (
+    5,
+    TO_DATE('2023-09-05', 'YYYY-MM-DD'),
+    0,
+    'Depressão',
+    'Histórico de depressão na família',
+    'Nenhuma alergia conhecida',
+    'Cliente está em acompanhamento psicológico regular'
+);
+
 INSERT INTO CP1_HISTORICO_HOSPITAL_CLIENTE (
     CLIENTE_ID,
     DATA_REGISTRO,
@@ -510,6 +948,54 @@ INSERT INTO CP1_HISTORICO_HOSPITAL_CLIENTE (
     'Exames de sangue',
     'Antibióticos',
     'Nenhuma observação'
+);
+
+INSERT INTO CP1_HISTORICO_HOSPITAL_CLIENTE (
+    CLIENTE_ID,
+    DATA_REGISTRO,
+    HISTORICO_MEDICO,
+    EXAMES_REALIZADOS,
+    MEDICAMENTOS_PRESCRITOS,
+    OBSERVACOES
+) VALUES (
+    3,
+    TO_DATE('2022-05-10', 'YYYY-MM-DD'),
+    'Cirurgia de emergência de apendicite',
+    'Tomografia computadorizada, exames de sangue',
+    'Analgésicos, antibióticos',
+    'Recuperação satisfatória'
+);
+
+INSERT INTO CP1_HISTORICO_HOSPITAL_CLIENTE (
+    CLIENTE_ID,
+    DATA_REGISTRO,
+    HISTORICO_MEDICO,
+    EXAMES_REALIZADOS,
+    MEDICAMENTOS_PRESCRITOS,
+    OBSERVACOES
+) VALUES (
+    4,
+    TO_DATE('2023-01-15', 'YYYY-MM-DD'),
+    'Fratura de tornozelo',
+    'Raio-X, ressonância magnética',
+    'Analgésicos, anti-inflamatórios',
+    'Cliente em reabilitação fisioterapêutica'
+);
+
+INSERT INTO CP1_HISTORICO_HOSPITAL_CLIENTE (
+    CLIENTE_ID,
+    DATA_REGISTRO,
+    HISTORICO_MEDICO,
+    EXAMES_REALIZADOS,
+    MEDICAMENTOS_PRESCRITOS,
+    OBSERVACOES
+) VALUES (
+    5,
+    TO_DATE('2023-09-30', 'YYYY-MM-DD'),
+    'Infarto agudo do miocárdio',
+    'Eletrocardiograma, angiografia coronariana',
+    'Antiagregantes plaquetários, estatinas',
+    'Cliente em monitoramento cardíaco regular'
 );
 
 SELECT

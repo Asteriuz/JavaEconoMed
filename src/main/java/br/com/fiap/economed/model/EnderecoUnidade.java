@@ -24,7 +24,7 @@ public class EnderecoUnidade {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "unidade_id")
+    @Column(name = "unidade_id", nullable = false)
     private Long unidadeId;
 
     @Column(name = "rua", length = 100)

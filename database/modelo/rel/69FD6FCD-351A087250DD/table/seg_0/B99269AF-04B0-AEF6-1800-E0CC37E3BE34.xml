@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B99269AF-04B0-AEF6-1800-E0CC37E3BE34" name="Unidade">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>21E80DE4-9F17-EF07-D05B-28A44356B039</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="AC917BDD-943D-BABC-B626-E765C13CA641">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>1012C4B2-B484-B1DF-DBA4-B639362FF235</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="E7B53AB5-79DE-EBC2-26DD-57F87C4092BC">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>890C02E0-0C01-5D7C-EA73-297E15A0271A</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefone" id="75165B85-F08B-5FB2-33DB-9FE99568A78D">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>8C6C06B4-4093-7200-77E5-0A032211E052</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="E2CFA19E-331C-EEEA-6777-E3CF364B70B3">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>9D8AE271-8014-0065-146B-4CE18205794E</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="8D8FD17C-1110-867D-48D6-C926E0FB27DB">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>64125191-7BBD-5CF4-88BB-702730BC696F</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacidade" id="C421278E-C55A-FBDD-788F-06532C9EEF1F">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>B8FC90B4-3196-C286-6CAD-E7203382A70A</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="especialidades" id="E456C864-0726-726C-3B5E-F31E5EA9A003">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>7AA36455-3999-BC5B-C7DA-FAE9C81ADE34</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Empresa_id" id="64188600-D293-8EC0-FDE0-C2994604183A">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>3EBA6C9F-2BE9-55F6-145C-E5168D0451DC</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14FB5C67-B4C1-937F-9942-6F861F8B017A" referredColumn="470E7F19-8A88-710D-CD29-79CB5ED23E6C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BB8E4A24-7A04-5320-793E-F16C3993E32D" name="Unidade_PK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>B79B8851-F8CF-A9A8-2FC0-D844FDEC12E3</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC917BDD-943D-BABC-B626-E765C13CA641"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79EED88D-AC78-42D1-9F2C-CA2E7B2D7256" name="Unidade_Empresa_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-04 03:07:01 UTC</createdTime>
+<generatorID>957CA251-BE26-B83B-0395-5216F106FC02</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="64188600-D293-8EC0-FDE0-C2994604183A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

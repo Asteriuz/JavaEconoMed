@@ -26,7 +26,7 @@ public class HistoricoHospitalCliente {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "cliente_id")
+    @Column(name = "cliente_id", nullable = false)
     private Long clienteId;
 
     @Column(name = "data_registro")
