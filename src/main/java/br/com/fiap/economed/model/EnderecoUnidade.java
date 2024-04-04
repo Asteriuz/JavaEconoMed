@@ -19,7 +19,8 @@ import br.com.fiap.economed.dto.unidadeEndereco.CadastroEnderecoUnidadeDto;
 public class EnderecoUnidade {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "endereco_unidade")
+    @SequenceGenerator(name = "endereco_unidade", sequenceName = "cp1_endereco_unidade_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

@@ -21,7 +21,8 @@ import java.time.LocalDate;
 public class Convenio {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "convenio")
+    @SequenceGenerator(name = "convenio", sequenceName = "cp1_convenio_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

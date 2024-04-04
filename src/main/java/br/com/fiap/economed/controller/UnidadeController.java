@@ -2,7 +2,6 @@ package br.com.fiap.economed.controller;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +14,6 @@ import br.com.fiap.economed.dto.unidade.CadastroUnidadeDto;
 import br.com.fiap.economed.dto.unidade.DetalhesUnidadeDto;
 import br.com.fiap.economed.model.Unidade;
 import br.com.fiap.economed.repository.UnidadeRepository;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/unidade")

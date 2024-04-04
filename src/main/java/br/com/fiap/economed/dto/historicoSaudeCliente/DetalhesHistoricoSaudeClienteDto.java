@@ -5,7 +5,7 @@ import br.com.fiap.economed.model.HistoricoSaudeCliente;
 public record DetalhesHistoricoSaudeClienteDto(
         Long id,
         Long clienteId,
-        String fumo,
+        Boolean fuma,
         String doencaPrincipal,
         String historicoFamiliar,
         String alergias,
@@ -15,7 +15,7 @@ public record DetalhesHistoricoSaudeClienteDto(
         this(
                 historicoSaudeCliente.getId(),
                 historicoSaudeCliente.getClienteId(),
-                historicoSaudeCliente.getFumo(),
+                historicoSaudeCliente.getFuma(),
                 historicoSaudeCliente.getDoencaPrincipal(),
                 historicoSaudeCliente.getHistoricoFamiliar(),
                 historicoSaudeCliente.getAlergias(),

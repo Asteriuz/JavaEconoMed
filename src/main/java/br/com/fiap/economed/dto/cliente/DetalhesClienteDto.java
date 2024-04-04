@@ -13,7 +13,7 @@ public record DetalhesClienteDto(
         String email,
         LocalDate dataNascimento,
         String cpf,
-        String estadoCivil,
+        EstadoCivilCliente estadoCivil,
         Long convenioId) {
 
     public DetalhesClienteDto(Cliente cliente) {

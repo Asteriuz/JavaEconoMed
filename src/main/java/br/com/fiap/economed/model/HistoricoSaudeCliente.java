@@ -21,7 +21,8 @@ import java.time.LocalDate;
 public class HistoricoSaudeCliente {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "historico_saude_cliente")
+    @SequenceGenerator(name = "historico_saude_cliente", sequenceName = "cp1_historico_saude_cliente_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
@@ -31,9 +32,8 @@ public class HistoricoSaudeCliente {
     @Column(name = "data_registro")
     private LocalDate dataRegistro;
 
-    //TODO: Transformar isso aqui em boolean pls
-    @Column(name = "fumo", length = 20)
-    private String fumo;
+    @Column(name = "fuma")
+    private Boolean fuma;
 
     //TODO: Trocar por um array de string "doenças"?
     @Column(name = "doenca_principal", length = 100)
@@ -51,7 +51,7 @@ public class HistoricoSaudeCliente {
     public HistoricoSaudeCliente(CadastroHistoricoSaudeClienteDto dto) {
         this.clienteId = dto.clienteId();
         this.dataRegistro = dto.dataRegistro();
-        this.fumo = dto.fumo();
+        this.fuma = dto.fuma();
         this.doencaPrincipal = dto.doencaPrincipal();
         this.historicoFamiliar = dto.historicoFamiliar();
         this.alergias = dto.alergias();
@@ -59,8 +59,8 @@ public class HistoricoSaudeCliente {
     }
 
     public void atualizarDados(AtualizacaoHistoricoSaudeClienteDto dto) {
-        if (dto.fumo() != null) {
-            fumo = dto.fumo();
+        if (dto.fuma() != null) {
+            fuma = dto.fuma();
         }
         if (dto.doencaPrincipal() != null) {
             doencaPrincipal = dto.doencaPrincipal();

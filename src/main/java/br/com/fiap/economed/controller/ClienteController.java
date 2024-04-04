@@ -3,9 +3,7 @@ package br.com.fiap.economed.controller;
 import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,8 +14,6 @@ import br.com.fiap.economed.dto.cliente.CadastroClienteDto;
 import br.com.fiap.economed.dto.cliente.DetalhesClienteDto;
 import br.com.fiap.economed.model.Cliente;
 import br.com.fiap.economed.repository.ClienteRepository;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/cliente")

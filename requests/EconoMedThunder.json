@@ -1,0 +1,594 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "EconoMed",
+    "dateExported": "2024-04-04T01:16:09.551Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Cliente",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.095Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "EnderecoCliente",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.096Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "f98afae1-f796-4a9c-9bb6-3c25ab17fb13",
+            "name": "HistoricoHospitalCliente",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.097Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "256719b0-3f31-4aad-b243-9734a7d71041",
+            "name": "HistoricoSaudeCliente",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.098Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Convenio",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.099Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Empresa",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.100Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Unidade",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.101Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "46a2855d-b36a-4bcb-993f-98823364f1d1",
+            "name": "EnderecoUnidade",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.102Z",
+            "sortNum": 80000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "94e2b06b-e107-41fb-95e5-5e72a431c7ef",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "List",
+            "url": "http://localhost:8080/cliente",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-03T23:00:38.095Z",
+            "modified": "2024-04-03T23:05:52.455Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8ce2e2e3-c458-48d8-8c19-a3adf5c368d0",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "FindByClienteId",
+            "url": "http://localhost:8080/cliente/1/endereco",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-04-03T23:00:38.100Z",
+            "modified": "2024-04-03T23:23:31.180Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c6aaaedb-e06f-4507-8870-2baa80879286",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "FindById",
+            "url": "http://localhost:8080/cliente/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-03T23:00:38.096Z",
+            "modified": "2024-04-03T23:06:37.942Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c6a19efd-412e-4c16-a0c2-b0303e59e568",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Create",
+            "url": "http://localhost:8080/cliente",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-04-03T23:00:38.097Z",
+            "modified": "2024-04-04T01:01:48.900Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"Augusto Barcelos Barros\",\n  \"telefone\": \"11997434003\",\n  \"email\": \"augusto@email.com\",\n  \"dataNascimento\": \"2002-12-26\",\n  \"cpf\": \"123.456.789-00\",\n  \"estadoCivil\": \"Divorciado\",\n  \"convenioId\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5297b733-a815-4415-9e53-ec960461e74a",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "Create",
+            "url": "http://localhost:8080/cliente/endereco",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-04-03T23:00:38.101Z",
+            "modified": "2024-04-03T23:27:19.183Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"clienteId\": 254,\n  \"rua\": \"Rua dos Clientes\",\n  \"numero\": \"123\",\n  \"cidade\": \"Cidade Cliente\",\n  \"estado\": \"Estado Cliente\",\n  \"cep\": \"12345-678\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "76a8de0f-7768-4dd5-a5e5-e9b4623589e4",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Update",
+            "url": "http://localhost:8080/cliente/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-04-03T23:00:38.098Z",
+            "modified": "2024-04-04T01:01:38.750Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"João Neto\",\n  \"telefone\": \"11223344\",\n  \"email\": \"joao.silva@email.com\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"cpf\": \"123.456.789-00\",\n  \"estadoCivil\": \"Casado\",\n  \"convenioId\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "60cfa9bb-e897-4d48-a94a-dfb66475174a",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "f98afae1-f796-4a9c-9bb6-3c25ab17fb13",
+            "name": "FindByClienteId",
+            "url": "http://localhost:8080/cliente/1/historico-hospital",
+            "method": "GET",
+            "sortNum": 45000,
+            "created": "2024-04-03T23:00:38.104Z",
+            "modified": "2024-04-03T23:31:25.423Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74209f1c-c759-4995-837b-064545b83187",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Delete",
+            "url": "http://localhost:8080/cliente/252",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-04-03T23:00:38.099Z",
+            "modified": "2024-04-03T23:20:36.896Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0295e566-adf0-4f33-b377-a09deeae83c7",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "46a2855d-b36a-4bcb-993f-98823364f1d1",
+            "name": "FindByClienteId",
+            "url": "http://localhost:8080/unidade/1/endereco",
+            "method": "GET",
+            "sortNum": 75000,
+            "created": "2024-04-03T23:00:38.124Z",
+            "modified": "2024-04-03T23:10:12.581Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "77cdd05c-26dc-4b05-9e98-b1297dfe1af0",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "f98afae1-f796-4a9c-9bb6-3c25ab17fb13",
+            "name": "Create",
+            "url": "http://localhost:8080/cliente/historico-hospital",
+            "method": "POST",
+            "sortNum": 77500,
+            "created": "2024-04-03T23:00:38.103Z",
+            "modified": "2024-04-03T23:31:32.977Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"clienteId\": 254,\n    \"dataRegistro\": \"2021-10-10\",\n    \"historicoMedico\": \"Dor de cabeça\",\n    \"examesRealizados\": \"Ressonância magnética\",\n    \"medicamentosPrescritos\": \"Dipirona\",\n    \"observacoes\": \"Paciente com histórico de enxaqueca\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "facccaf9-ea75-47c2-a810-34433af80821",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "Update",
+            "url": "http://localhost:8080/cliente/1/endereco",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-04-03T23:00:38.102Z",
+            "modified": "2024-04-03T23:27:53.269Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rua\": \"Rua dos Clientes 2\",\n  \"numero\": \"123\",\n  \"cidade\": \"Cidade Cliente\",\n  \"estado\": \"Estado Cliente\",\n  \"cep\": \"12345-678\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a2087f08-683a-4b33-9d32-753e2f4d977a",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "f98afae1-f796-4a9c-9bb6-3c25ab17fb13",
+            "name": "Update",
+            "url": "http://localhost:8080/cliente/1/historico-hospital",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2024-04-03T23:00:38.105Z",
+            "modified": "2024-04-03T23:31:38.495Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"historicoMedico\": \"Cirurgia de apendicite em 2014\",\n    \"examesRealizados\": \"Exames de rotina\",\n    \"medicamentosPrescritos\": \"Paracetamol\",\n    \"observacoes\": \"Nenhuma observação\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cbe54ef3-00de-4b09-96b1-c570bbf620d2",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "256719b0-3f31-4aad-b243-9734a7d71041",
+            "name": "FindByClienteId",
+            "url": "http://localhost:8080/cliente/1/historico-saude",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-04-03T23:00:38.107Z",
+            "modified": "2024-04-03T23:08:12.032Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c6a17ee5-307e-43aa-bdc0-95daad65aa56",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "256719b0-3f31-4aad-b243-9734a7d71041",
+            "name": "Create",
+            "url": "http://localhost:8080/cliente/historico-saude",
+            "method": "POST",
+            "sortNum": 135000,
+            "created": "2024-04-03T23:00:38.106Z",
+            "modified": "2024-04-04T01:15:24.779Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"clienteId\": 402,\n    \"dataRegistro\": \"2021-08-01\",\n    \"fuma\": 0,\n    \"doencaPrincipal\": \"Hipertensão\",\n    \"historicoFamiliar\": \"Pai com diabetes\",\n    \"alergias\": \"Nenhuma\",\n    \"observacoes\": \"Paciente com histórico de hipertensão\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9f042185-b952-4d29-982d-e8cc2045d5f8",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "256719b0-3f31-4aad-b243-9734a7d71041",
+            "name": "Update",
+            "url": "http://localhost:8080/cliente/1/historico-saude",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-04-03T23:00:38.108Z",
+            "modified": "2024-04-04T01:14:49.031Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"fuma\": 1,\n    \"doencaPrincipal\": \"Hipertensão\",\n    \"historicoFamiliar\": \"Nenhum histórico relevante\",\n    \"alergias\": \"Nenhuma alergia conhecida\",\n    \"observacoes\": \"Sem observações\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cc214471-c390-40e0-b72f-ffdece8ea555",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "List",
+            "url": "http://localhost:8080/convenio",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-04-03T23:00:38.109Z",
+            "modified": "2024-04-03T23:08:25.521Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6e3d8186-beb4-4874-9645-6afdd218ad21",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "46a2855d-b36a-4bcb-993f-98823364f1d1",
+            "name": "Create",
+            "url": "http://localhost:8080/unidade/endereco",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-04-03T23:00:38.125Z",
+            "modified": "2024-04-03T23:33:44.172Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"unidadeId\": 102,\n  \"rua\": \"Rua da Unidade A\",\n  \"numero\": \"789\",\n  \"cidade\": \"Cidade Unidade\",\n  \"estado\": \"Estado Unidade\",\n  \"cep\": \"54321-098\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2ffa87b8-58d8-4400-8e0e-1bfda5b0634c",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "FindById",
+            "url": "http://localhost:8080/convenio/1",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-04-03T23:00:38.110Z",
+            "modified": "2024-04-03T23:08:33.196Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0cd0b2a1-d363-4ab7-a4fe-11d9cb514949",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Create",
+            "url": "http://localhost:8080/convenio",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2024-04-03T23:00:38.111Z",
+            "modified": "2024-04-03T23:08:43.791Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Convenio C\",\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e465b8da-5ab4-4978-9f04-3499b0832886",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Update",
+            "url": "http://localhost:8080/convenio/202",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2024-04-03T23:00:38.112Z",
+            "modified": "2024-04-03T23:32:15.228Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Convenio D\",\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "362b3013-f753-4c0d-85b2-68823e7b6243",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Delete",
+            "url": "http://localhost:8080/convenio/202",
+            "method": "DELETE",
+            "sortNum": 190000,
+            "created": "2024-04-03T23:00:38.113Z",
+            "modified": "2024-04-03T23:32:21.863Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2ff73697-137d-4608-b367-d0e75b8411ce",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "List",
+            "url": "http://localhost:8080/empresa",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2024-04-03T23:00:38.114Z",
+            "modified": "2024-04-03T23:09:00.858Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d25a9553-87b7-40c6-bf7e-6c0c632cebad",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "FindById",
+            "url": "http://localhost:8080/empresa/1",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-04-03T23:00:38.115Z",
+            "modified": "2024-04-03T23:09:05.947Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0027e898-82e9-4b8f-b776-a6ff9d8afb1f",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Create",
+            "url": "http://localhost:8080/empresa",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2024-04-03T23:00:38.116Z",
+            "modified": "2024-04-03T23:09:10.172Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa J\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6becbdfb-ad07-4b6b-ab47-eec0a84e4c9d",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Update",
+            "url": "http://localhost:8080/empresa/1",
+            "method": "PUT",
+            "sortNum": 230000,
+            "created": "2024-04-03T23:00:38.117Z",
+            "modified": "2024-04-03T23:09:15.376Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa Porto Seguro\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "96c4ab1a-c452-4bd8-b95a-c119a35ec68e",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Delete",
+            "url": "http://localhost:8080/empresa/52",
+            "method": "DELETE",
+            "sortNum": 240000,
+            "created": "2024-04-03T23:00:38.118Z",
+            "modified": "2024-04-03T23:24:58.218Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "73456b7a-4381-49b9-a768-1db25f27ad66",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "List",
+            "url": "http://localhost:8080/unidade",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2024-04-03T23:00:38.119Z",
+            "modified": "2024-04-03T23:09:26.333Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "882f3cec-2a3b-40ef-9898-eca7df9d2d9b",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "FindById",
+            "url": "http://localhost:8080/unidade/1",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2024-04-03T23:00:38.120Z",
+            "modified": "2024-04-03T23:09:32.034Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5f32093d-8e03-43d9-a65c-bb60661692d2",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Create",
+            "url": "http://localhost:8080/unidade",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2024-04-03T23:00:38.121Z",
+            "modified": "2024-04-03T23:09:36.553Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Unidade Z\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 100,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e633363c-6225-4561-a19b-9abbbd6ebd90",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Update",
+            "url": "http://localhost:8080/unidade/1",
+            "method": "PUT",
+            "sortNum": 280000,
+            "created": "2024-04-03T23:00:38.122Z",
+            "modified": "2024-04-03T23:09:41.127Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Unidade Amaral\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 100,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b841227f-e727-472f-9f08-eeae39998bc2",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Delete",
+            "url": "http://localhost:8080/unidade/52",
+            "method": "DELETE",
+            "sortNum": 290000,
+            "created": "2024-04-03T23:00:38.123Z",
+            "modified": "2024-04-03T23:25:16.316Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "07ab3e42-66f8-4f5a-b6c6-887a9f9617ad",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "46a2855d-b36a-4bcb-993f-98823364f1d1",
+            "name": "Update",
+            "url": "http://localhost:8080/unidade/1/endereco",
+            "method": "PUT",
+            "sortNum": 320000,
+            "created": "2024-04-03T23:00:38.126Z",
+            "modified": "2024-04-03T23:10:26.480Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"rua\": \"Rua da Unidade A\",\n    \"numero\": \"789\",\n    \"cidade\": \"Cidade da Unidade\",\n    \"estado\": \"Estado da Unidade\",\n    \"cep\": \"54321-098\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

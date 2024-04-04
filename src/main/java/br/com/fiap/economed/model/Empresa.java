@@ -9,7 +9,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import br.com.fiap.economed.dto.empresa.CadastroEmpresaDto;
 import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDto;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,7 +19,8 @@ import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDto;
 public class Empresa {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "empresa")
+    @SequenceGenerator(name = "empresa", sequenceName = "cp1_empresa_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
@@ -30,7 +30,8 @@ public class Empresa {
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    //TODO: Quais tipos de empresas podem ser cadastradas? Vamos criar um enum pra isso?
+    // TODO: Quais tipos de empresas podem ser cadastradas? Vamos criar um enum pra
+    // isso?
     @Column(name = "tipo", nullable = false, length = 100)
     private String tipo;
 
@@ -40,7 +41,8 @@ public class Empresa {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    //TODO: Quais áreas de atuação podem ser cadastradas? Vamos criar um enum pra isso?
+    // TODO: Quais áreas de atuação podem ser cadastradas? Vamos criar um enum pra
+    // isso?
     @Column(name = "area_atuacao", nullable = false, length = 100)
     private String areaAtuacao;
 

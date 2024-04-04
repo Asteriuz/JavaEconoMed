@@ -1,8 +1,9 @@
 package br.com.fiap.economed.dto.cliente;
 
-import br.com.fiap.economed.model.enums.EstadoCivilCliente;
 
 import java.time.LocalDate;
+
+import br.com.fiap.economed.model.enums.EstadoCivilCliente;
 
 public record CadastroClienteDto(
         String rg,
@@ -11,6 +12,6 @@ public record CadastroClienteDto(
         String email,
         LocalDate dataNascimento,
         String cpf,
-        String estadoCivil,
+        EstadoCivilCliente estadoCivil,
         Long convenioId) {
 }

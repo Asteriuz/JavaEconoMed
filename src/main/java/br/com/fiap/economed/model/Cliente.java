@@ -1,7 +1,6 @@
 package br.com.fiap.economed.model;
 
 import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
-import br.com.fiap.economed.model.enums.EstadoCivilCliente;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +8,7 @@ import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import br.com.fiap.economed.dto.cliente.CadastroClienteDto;
+import br.com.fiap.economed.model.enums.EstadoCivilCliente;
 
 import java.time.LocalDate;
 
@@ -22,7 +22,8 @@ import java.time.LocalDate;
 public class Cliente {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
+    @SequenceGenerator(name = "cliente", sequenceName = "cp1_cliente_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
@@ -44,8 +45,9 @@ public class Cliente {
     @Column(name = "cpf", length = 20)
     private String cpf;
 
-    @Column(name = "estado_civil", length = 20) //TODO: Não funciona com enum
-    private String estadoCivil;
+    @Column(name = "estado_civil", length = 20)
+    @Enumerated(EnumType.STRING)
+    private EstadoCivilCliente estadoCivil;
 
     @Column(name = "convenio_id")
     private Long convenioId;

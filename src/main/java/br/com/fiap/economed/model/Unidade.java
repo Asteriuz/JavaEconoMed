@@ -20,7 +20,8 @@ import br.com.fiap.economed.dto.unidade.CadastroUnidadeDto;
 public class Unidade {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "unidade")
+    @SequenceGenerator(name = "unidade", sequenceName = "cp1_unidade_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
