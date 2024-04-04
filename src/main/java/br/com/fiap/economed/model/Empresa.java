@@ -30,8 +30,7 @@ public class Empresa {
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    // TODO: Quais tipos de empresas podem ser cadastradas? Vamos criar um enum pra
-    // isso?
+    // TODO: Quais tipos de empresas podem ser cadastradas? Vamos criar um enum pra isso?
     @Column(name = "tipo", nullable = false, length = 100)
     private String tipo;
 
@@ -41,8 +40,7 @@ public class Empresa {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    // TODO: Quais áreas de atuação podem ser cadastradas? Vamos criar um enum pra
-    // isso?
+    // TODO: Quais áreas de atuação podem ser cadastradas? Vamos criar um enum pra isso?
     @Column(name = "area_atuacao", nullable = false, length = 100)
     private String areaAtuacao;
 

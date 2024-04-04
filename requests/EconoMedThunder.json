@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "EconoMed",
-    "dateExported": "2024-04-04T01:16:09.551Z",
+    "dateExported": "2024-04-04T02:32:57.166Z",
     "version": "1.1",
     "folders": [
         {
@@ -132,12 +132,12 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-04-03T23:00:38.101Z",
-            "modified": "2024-04-03T23:27:19.183Z",
+            "modified": "2024-04-04T02:09:41.028Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"clienteId\": 254,\n  \"rua\": \"Rua dos Clientes\",\n  \"numero\": \"123\",\n  \"cidade\": \"Cidade Cliente\",\n  \"estado\": \"Estado Cliente\",\n  \"cep\": \"12345-678\"\n}",
+                "raw": "{\n  \"clienteId\": 3,\n  \"rua\": \"Rua dos Clientes\",\n  \"numero\": \"123\",\n  \"cidade\": \"Cidade Cliente\",\n  \"estado\": \"Estado Cliente\",\n  \"cep\": \"12345-678\"\n}",
                 "form": []
             },
             "tests": []
@@ -180,11 +180,11 @@
             "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
             "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
             "name": "Delete",
-            "url": "http://localhost:8080/cliente/252",
+            "url": "http://localhost:8080/cliente/4",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-04-03T23:00:38.099Z",
-            "modified": "2024-04-03T23:20:36.896Z",
+            "modified": "2024-04-04T02:12:58.763Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -212,12 +212,12 @@
             "method": "POST",
             "sortNum": 77500,
             "created": "2024-04-03T23:00:38.103Z",
-            "modified": "2024-04-03T23:31:32.977Z",
+            "modified": "2024-04-04T02:11:53.911Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"clienteId\": 254,\n    \"dataRegistro\": \"2021-10-10\",\n    \"historicoMedico\": \"Dor de cabeça\",\n    \"examesRealizados\": \"Ressonância magnética\",\n    \"medicamentosPrescritos\": \"Dipirona\",\n    \"observacoes\": \"Paciente com histórico de enxaqueca\"\n}",
+                "raw": "{\n    \"clienteId\": 3,\n    \"dataRegistro\": \"2021-10-10\",\n    \"historicoMedico\": \"Dor de cabeça\",\n    \"examesRealizados\": \"Ressonância magnética\",\n    \"medicamentosPrescritos\": \"Dipirona\",\n    \"observacoes\": \"Paciente com histórico de enxaqueca\"\n}",
                 "form": []
             },
             "tests": []
@@ -283,12 +283,12 @@
             "method": "POST",
             "sortNum": 135000,
             "created": "2024-04-03T23:00:38.106Z",
-            "modified": "2024-04-04T01:15:24.779Z",
+            "modified": "2024-04-04T02:11:59.338Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"clienteId\": 402,\n    \"dataRegistro\": \"2021-08-01\",\n    \"fuma\": 0,\n    \"doencaPrincipal\": \"Hipertensão\",\n    \"historicoFamiliar\": \"Pai com diabetes\",\n    \"alergias\": \"Nenhuma\",\n    \"observacoes\": \"Paciente com histórico de hipertensão\"\n}",
+                "raw": "{\n    \"clienteId\": 3,\n    \"dataRegistro\": \"2021-08-01\",\n    \"fuma\": 0,\n    \"doencaPrincipal\": \"Hipertensão\",\n    \"historicoFamiliar\": \"Pai com diabetes\",\n    \"alergias\": \"Nenhuma\",\n    \"observacoes\": \"Paciente com histórico de hipertensão\"\n}",
                 "form": []
             },
             "tests": []
@@ -335,12 +335,12 @@
             "method": "POST",
             "sortNum": 150000,
             "created": "2024-04-03T23:00:38.125Z",
-            "modified": "2024-04-03T23:33:44.172Z",
+            "modified": "2024-04-04T02:12:29.568Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"unidadeId\": 102,\n  \"rua\": \"Rua da Unidade A\",\n  \"numero\": \"789\",\n  \"cidade\": \"Cidade Unidade\",\n  \"estado\": \"Estado Unidade\",\n  \"cep\": \"54321-098\"\n}",
+                "raw": "{\n  \"unidadeId\": 3,\n  \"rua\": \"Rua da Unidade A\",\n  \"numero\": \"789\",\n  \"cidade\": \"Cidade Unidade\",\n  \"estado\": \"Estado Unidade\",\n  \"cep\": \"54321-098\"\n}",
                 "form": []
             },
             "tests": []
@@ -402,11 +402,11 @@
             "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
             "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
             "name": "Delete",
-            "url": "http://localhost:8080/convenio/202",
+            "url": "http://localhost:8080/convenio/4",
             "method": "DELETE",
             "sortNum": 190000,
             "created": "2024-04-03T23:00:38.113Z",
-            "modified": "2024-04-03T23:32:21.863Z",
+            "modified": "2024-04-04T02:13:04.967Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -482,11 +482,11 @@
             "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
             "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
             "name": "Delete",
-            "url": "http://localhost:8080/empresa/52",
+            "url": "http://localhost:8080/empresa/4",
             "method": "DELETE",
             "sortNum": 240000,
             "created": "2024-04-03T23:00:38.118Z",
-            "modified": "2024-04-03T23:24:58.218Z",
+            "modified": "2024-04-04T02:13:16.901Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -562,11 +562,11 @@
             "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
             "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
             "name": "Delete",
-            "url": "http://localhost:8080/unidade/52",
+            "url": "http://localhost:8080/unidade/4",
             "method": "DELETE",
             "sortNum": 290000,
             "created": "2024-04-03T23:00:38.123Z",
-            "modified": "2024-04-03T23:25:16.316Z",
+            "modified": "2024-04-04T02:13:30.975Z",
             "headers": [],
             "params": [],
             "tests": []
