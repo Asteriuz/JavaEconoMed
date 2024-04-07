@@ -37,14 +37,12 @@ public class Unidade {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    //TODO: Quais tipos de unidades podem ser cadastradas? Vamos criar um enum pra isso?
     @Column(name = "tipo", nullable = false, length = 100)
     private String tipo;
 
     @Column(name = "capacidade")
     private Integer capacidade;
 
-    //TODO: Quais especialidades podem ser cadastradas? Vamos criar um enum pra isso?
     @Column(name = "especialidades", length = 100)
     private String especialidades;
 

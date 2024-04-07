@@ -35,7 +35,6 @@ public class Convenio {
     @Column(name = "valor")
     private Double valor;
 
-    //TODO: Quais tipos de serviços podem ser oferecidos? Vamos criar um enum pra isso?
     @Column(name = "tipo_servico", length = 100)
     private String tipoServico;
 

@@ -35,7 +35,6 @@ public class HistoricoSaudeCliente {
     @Column(name = "fuma")
     private Boolean fuma;
 
-    //TODO: Trocar por um array de string "doenças"?
     @Column(name = "doenca_principal", length = 100)
     private String doencaPrincipal;
 
