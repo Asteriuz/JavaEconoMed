@@ -1,5 +1,5 @@
 
-# Checkpoint 01 - *EconoMed*
+# Sprint 01 - *EconoMed*
 
 - **Java Advanced**
 
@@ -171,4 +171,5 @@ O sistema está organizado seguindo a arquitetura MVC:
 - Adicionar Casos de Uso para cada requisição.
 - Evoluir o que já possuímos.
 - Começar a criar as requisições para resolução de nosso programa, por exemplo, um endpoint para Precificar um convênio.
+- Fazer os relacionamentos das entidade utilizando annotations.
 
