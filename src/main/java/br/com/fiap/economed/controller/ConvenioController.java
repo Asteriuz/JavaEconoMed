@@ -16,7 +16,7 @@ import br.com.fiap.economed.model.Convenio;
 import br.com.fiap.economed.repository.ConvenioRepository;
 
 @RestController
-@RequestMapping("/convenio")
+@RequestMapping("/convenios")
 public class ConvenioController {
 
     @Autowired

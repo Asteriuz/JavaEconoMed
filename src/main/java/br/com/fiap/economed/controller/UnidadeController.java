@@ -16,7 +16,7 @@ import br.com.fiap.economed.model.Unidade;
 import br.com.fiap.economed.repository.UnidadeRepository;
 
 @RestController
-@RequestMapping("/unidade")
+@RequestMapping("/unidades")
 public class UnidadeController {
 
     @Autowired
@@ -42,7 +42,7 @@ public class UnidadeController {
             UriComponentsBuilder uriBuilder) {
         var unidade = new Unidade(unidadeDto);
         unidadeRepository.save(unidade);
-        var uri = uriBuilder.path("/cliente/{unidadeId}").buildAndExpand(unidade.getId()).toUri();
+        var uri = uriBuilder.path("/clientes/{unidadeId}").buildAndExpand(unidade.getId()).toUri();
         return ResponseEntity.created(uri).body(new DetalhesUnidadeDto(unidade));
     }
 

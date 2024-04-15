@@ -16,7 +16,7 @@ import br.com.fiap.economed.model.Empresa;
 import br.com.fiap.economed.repository.EmpresaRepository;
 
 @RestController
-@RequestMapping("/empresa")
+@RequestMapping("/empresas")
 public class EmpresaController {
 
     @Autowired

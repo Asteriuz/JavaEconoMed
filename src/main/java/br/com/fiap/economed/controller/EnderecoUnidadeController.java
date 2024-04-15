@@ -14,7 +14,7 @@ import br.com.fiap.economed.model.EnderecoUnidade;
 import br.com.fiap.economed.repository.EnderecoUnidadeRepository;
 
 @RestController
-@RequestMapping("/unidade")
+@RequestMapping("/unidades")
 public class EnderecoUnidadeController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class EnderecoUnidadeController {
             UriComponentsBuilder uriBuilder) {
         var endereco = new EnderecoUnidade(enderecoDto);
         enderecoRepository.save(endereco);
-        var uri = uriBuilder.path("unidade/{unidadeID}/endereco").buildAndExpand(endereco.getUnidadeId()).toUri();
+        var uri = uriBuilder.path("unidades/{unidadeID}/endereco").buildAndExpand(endereco.getUnidadeId()).toUri();
         return ResponseEntity.created(uri).body(new DetalhesEnderecoUnidadeDto(endereco));
     }
 

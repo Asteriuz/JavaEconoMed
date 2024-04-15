@@ -14,7 +14,7 @@ import br.com.fiap.economed.model.HistoricoHospitalCliente;
 import br.com.fiap.economed.repository.HistoricoHospitalClienteRepository;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 public class HistoricoHospitalClienteController {
 
     @Autowired
@@ -35,7 +35,7 @@ public class HistoricoHospitalClienteController {
             UriComponentsBuilder uriBuilder) {
         var historicoHospitalCliente = new HistoricoHospitalCliente(historicoHospitalClienteDto);
         historicoSaudeClienteRepository.save(historicoHospitalCliente);
-        var url = uriBuilder.path("cliente/{clienteId}/historico-hospital").buildAndExpand(historicoHospitalCliente.getId())
+        var url = uriBuilder.path("clientes/{clienteId}/historico-hospital").buildAndExpand(historicoHospitalCliente.getId())
                 .toUri();
         return ResponseEntity.created(url).body(new DetalhesHistoricoHospitalClienteDto(historicoHospitalCliente));
     }
