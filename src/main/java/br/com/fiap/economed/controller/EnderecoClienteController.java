@@ -14,7 +14,7 @@ import br.com.fiap.economed.model.EnderecoCliente;
 import br.com.fiap.economed.repository.EnderecoClienteRepository;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 public class EnderecoClienteController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class EnderecoClienteController {
             UriComponentsBuilder uriBuilder) {
         var endereco = new EnderecoCliente(enderecoDto);
         enderecoRepository.save(endereco);
-        var uri = uriBuilder.path("cliente/{clienteId}/endereco").buildAndExpand(endereco.getClienteId()).toUri();
+        var uri = uriBuilder.path("clientes/{clienteId}/endereco").buildAndExpand(endereco.getClienteId()).toUri();
         return ResponseEntity.created(uri).body(new DetalhesEnderecoClienteDto(endereco));
     }
 

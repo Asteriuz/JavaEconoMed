@@ -16,7 +16,7 @@ import br.com.fiap.economed.model.Cliente;
 import br.com.fiap.economed.repository.ClienteRepository;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
