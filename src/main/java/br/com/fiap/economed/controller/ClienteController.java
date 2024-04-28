@@ -1,6 +1,7 @@
 package br.com.fiap.economed.controller;
 
 import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
+import br.com.fiap.economed.service.ClienteService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,50 +16,49 @@ import br.com.fiap.economed.dto.cliente.DetalhesClienteDto;
 import br.com.fiap.economed.model.Cliente;
 import br.com.fiap.economed.repository.ClienteRepository;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    private final ClienteService clienteService;
+
+    public ClienteController(ClienteService clienteService) {
+        this.clienteService = clienteService;
+    }
 
     @GetMapping
-    public ResponseEntity<Page<DetalhesClienteDto>> listar(Pageable paginacao) {
-        var paginaClientes = clienteRepository.findAll(paginacao).map(DetalhesClienteDto::new);
-        return ResponseEntity.ok(paginaClientes);
+    public ResponseEntity<List<Cliente>> listarClientes() {
+        List<Cliente> clientes = clienteService.listarClientes();
+        return ResponseEntity.ok(clientes);
     }
 
     @GetMapping("/{clienteId}")
-    public ResponseEntity<DetalhesClienteDto> buscar(@PathVariable("clienteId") Long clienteId)
-            throws EntityNotFoundException {
-        var cliente = clienteRepository.findById(clienteId).orElseThrow(EntityNotFoundException::new);
-        return ResponseEntity.ok(new DetalhesClienteDto(cliente));
+    public ResponseEntity<Cliente> buscarCliente(@PathVariable Long clienteId) throws EntityNotFoundException {
+        Cliente cliente = clienteService.buscarCliente(clienteId);
+        return ResponseEntity.ok(cliente);
     }
 
     @PostMapping
-    @Transactional
-    public ResponseEntity<DetalhesClienteDto> cadastrar(@RequestBody CadastroClienteDto clienteDto,
-            UriComponentsBuilder uri) {
-        var cliente = new Cliente(clienteDto);
-        clienteRepository.save(cliente);
-        var url = uri.path("/cliente/{clienteId}").buildAndExpand(cliente.getId()).toUri();
-        return ResponseEntity.created(url).body(new DetalhesClienteDto(cliente));
+    public ResponseEntity<Cliente> cadastrarCliente(@RequestBody CadastroClienteDto clienteDto,
+                                                   UriComponentsBuilder uriBuilder) {
+        Cliente cliente = clienteService.cadastrarCliente(clienteDto);
+        return ResponseEntity.created(uriBuilder.path("/clientes/{clienteId}").buildAndExpand(cliente.getId()).toUri())
+                .body(cliente);
     }
 
     @PutMapping("/{clienteId}")
-    @Transactional
-    public ResponseEntity<DetalhesClienteDto> atualizar(@PathVariable("clienteId") Long clienteId,
-            @RequestBody AtualizacaoClienteDto clienteDto) throws EntityNotFoundException {
-        var cliente = clienteRepository.findById(clienteId).orElseThrow(EntityNotFoundException::new);
-        cliente.atualizarDados(clienteDto);
-        return ResponseEntity.ok(new DetalhesClienteDto(cliente));
+    public ResponseEntity<Cliente> atualizarCliente(@PathVariable Long clienteId,
+                                                    @RequestBody AtualizacaoClienteDto clienteDto)
+            throws EntityNotFoundException {
+        Cliente cliente = clienteService.atualizarCliente(clienteId, clienteDto);
+        return ResponseEntity.ok(cliente);
     }
 
     @DeleteMapping("/{clienteId}")
-    @Transactional
-    public ResponseEntity<Void> remover(@PathVariable("clienteId") Long clienteId) throws EntityNotFoundException {
-        var cliente = clienteRepository.findById(clienteId).orElseThrow(EntityNotFoundException::new);
-        clienteRepository.delete(cliente);
+    public ResponseEntity<Void> removerCliente(@PathVariable Long clienteId) throws EntityNotFoundException {
+        clienteService.removerCliente(clienteId);
         return ResponseEntity.noContent().build();
     }
 
