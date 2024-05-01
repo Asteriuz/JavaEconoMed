@@ -1,6 +1,7 @@
 package br.com.fiap.economed.controller;
 
 import br.com.fiap.economed.dto.unidadeEndereco.AtualizacaoEnderecoUnidadeDto;
+import br.com.fiap.economed.service.EnderecoUnidadeService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,33 +18,34 @@ import br.com.fiap.economed.repository.EnderecoUnidadeRepository;
 @RequestMapping("/unidades")
 public class EnderecoUnidadeController {
 
-    @Autowired
-    private EnderecoUnidadeRepository enderecoRepository;
+    private final EnderecoUnidadeService enderecoService;
+
+    public EnderecoUnidadeController(EnderecoUnidadeService enderecoService) {
+        this.enderecoService = enderecoService;
+    }
 
     @GetMapping("/{unidadeId}/endereco")
-    public ResponseEntity<DetalhesEnderecoUnidadeDto> buscar(@PathVariable("unidadeId") Long unidadeId) throws EntityNotFoundException {
-        var endereco = enderecoRepository.findByUnidadeId(unidadeId)
-                .orElseThrow(EntityNotFoundException::new);
-        return ResponseEntity.ok(new DetalhesEnderecoUnidadeDto(endereco));
+    public ResponseEntity<DetalhesEnderecoUnidadeDto> find(@PathVariable("unidadeId") Long unidadeId)
+            throws EntityNotFoundException {
+        var endereco = enderecoService.buscarEnderecoUnidade(unidadeId);
+        return ResponseEntity.ok(endereco);
     }
 
     @PostMapping("/endereco")
     @Transactional
-    public ResponseEntity<DetalhesEnderecoUnidadeDto> cadastrar(@RequestBody CadastroEnderecoUnidadeDto enderecoDto,
+    public ResponseEntity<DetalhesEnderecoUnidadeDto> create(@RequestBody CadastroEnderecoUnidadeDto enderecoDto,
             UriComponentsBuilder uriBuilder) {
-        var endereco = new EnderecoUnidade(enderecoDto);
-        enderecoRepository.save(endereco);
-        var uri = uriBuilder.path("unidades/{unidadeID}/endereco").buildAndExpand(endereco.getUnidadeId()).toUri();
-        return ResponseEntity.created(uri).body(new DetalhesEnderecoUnidadeDto(endereco));
+        var endereco = enderecoService.cadastrarEnderecoUnidade(enderecoDto);
+
+        return ResponseEntity.created(uriBuilder.path("/unidades/{unidadeId}/endereco").buildAndExpand(endereco.getUnidadeId()).toUri())
+                .body(new DetalhesEnderecoUnidadeDto(endereco));
     }
 
     @PutMapping("/{unidadeId}/endereco")
     @Transactional
-    public ResponseEntity<DetalhesEnderecoUnidadeDto> atualizar(@PathVariable("unidadeId") Long unidadeId,
+    public ResponseEntity<EnderecoUnidade> update(@PathVariable("unidadeId") Long unidadeId,
             @RequestBody AtualizacaoEnderecoUnidadeDto enderecoDto) throws EntityNotFoundException {
-        var endereco = enderecoRepository.findByUnidadeId(unidadeId)
-                .orElseThrow(EntityNotFoundException::new);
-        endereco.atualizarDados(enderecoDto);
-        return ResponseEntity.ok(new DetalhesEnderecoUnidadeDto(endereco));
+        var endereco = enderecoService.atualizarEnderecoUnidade(unidadeId, enderecoDto);
+        return ResponseEntity.ok(endereco);
     }
 }

@@ -31,8 +31,8 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<Page<DetalhesClienteDto>> list(Pageable paginacao) {
-        var paginacaoClientes = clienteService.listarClientes(paginacao);
-        return ResponseEntity.ok(paginacaoClientes);
+        var paginaClientes = clienteService.listarClientes(paginacao);
+        return ResponseEntity.ok(paginaClientes);
     }
 
     @GetMapping("/{clienteId}")
