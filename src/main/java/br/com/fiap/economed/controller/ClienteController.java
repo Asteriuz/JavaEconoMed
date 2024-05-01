@@ -1,6 +1,7 @@
 package br.com.fiap.economed.controller;
 
 import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
+import br.com.fiap.economed.dto.convenio.DetalhesConvenioDto;
 import br.com.fiap.economed.service.ClienteService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,35 +30,38 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Cliente>> listarClientes() {
-        List<Cliente> clientes = clienteService.listarClientes();
-        return ResponseEntity.ok(clientes);
+    public ResponseEntity<Page<DetalhesClienteDto>> list(Pageable paginacao) {
+        var paginacaoClientes = clienteService.listarClientes(paginacao);
+        return ResponseEntity.ok(paginacaoClientes);
     }
 
     @GetMapping("/{clienteId}")
-    public ResponseEntity<Cliente> buscarCliente(@PathVariable Long clienteId) throws EntityNotFoundException {
-        Cliente cliente = clienteService.buscarCliente(clienteId);
+    public ResponseEntity<DetalhesClienteDto> search(@PathVariable Long clienteId)
+            throws EntityNotFoundException {
+        var cliente = clienteService.buscarCliente(clienteId);
         return ResponseEntity.ok(cliente);
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> cadastrarCliente(@RequestBody CadastroClienteDto clienteDto,
+    @Transactional
+    public ResponseEntity<Cliente> create(@RequestBody CadastroClienteDto clienteDto,
                                                    UriComponentsBuilder uriBuilder) {
-        Cliente cliente = clienteService.cadastrarCliente(clienteDto);
+        var cliente = clienteService.cadastrarCliente(clienteDto);
+
         return ResponseEntity.created(uriBuilder.path("/clientes/{clienteId}").buildAndExpand(cliente.getId()).toUri())
                 .body(cliente);
     }
 
     @PutMapping("/{clienteId}")
-    public ResponseEntity<Cliente> atualizarCliente(@PathVariable Long clienteId,
+    public ResponseEntity<Cliente> update(@PathVariable Long clienteId,
                                                     @RequestBody AtualizacaoClienteDto clienteDto)
             throws EntityNotFoundException {
-        Cliente cliente = clienteService.atualizarCliente(clienteId, clienteDto);
+        var cliente = clienteService.atualizarCliente(clienteId, clienteDto);
         return ResponseEntity.ok(cliente);
     }
 
     @DeleteMapping("/{clienteId}")
-    public ResponseEntity<Void> removerCliente(@PathVariable Long clienteId) throws EntityNotFoundException {
+    public ResponseEntity<Void> delete(@PathVariable Long clienteId) throws EntityNotFoundException {
         clienteService.removerCliente(clienteId);
         return ResponseEntity.noContent().build();
     }
