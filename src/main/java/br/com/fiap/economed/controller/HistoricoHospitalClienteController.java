@@ -1,6 +1,7 @@
 package br.com.fiap.economed.controller;
 
 import br.com.fiap.economed.dto.historicoHospitalCliente.AtualizacaoHistoricoHospitalClienteDto;
+import br.com.fiap.economed.service.HistoricoHospitalClienteService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,37 +18,37 @@ import br.com.fiap.economed.repository.HistoricoHospitalClienteRepository;
 @RequestMapping("/clientes")
 public class HistoricoHospitalClienteController {
 
-    @Autowired
-    private HistoricoHospitalClienteRepository historicoSaudeClienteRepository;
+    private final HistoricoHospitalClienteService historicoSaudeClienteService;
 
+    public HistoricoHospitalClienteController(HistoricoHospitalClienteService historicoSaudeClienteService) {
+        this.historicoSaudeClienteService = historicoSaudeClienteService;
+    }
 
     @GetMapping("/{clienteId}/historico-hospital")
-    public ResponseEntity<DetalhesHistoricoHospitalClienteDto> buscar(@PathVariable("clienteId") Long clienteId) throws EntityNotFoundException {
-        var historicoHospitalar = historicoSaudeClienteRepository.findByClienteId(clienteId).
-                orElseThrow(EntityNotFoundException::new);
-        return ResponseEntity.ok(new DetalhesHistoricoHospitalClienteDto(historicoHospitalar));
+    public ResponseEntity<DetalhesHistoricoHospitalClienteDto> search(@PathVariable Long clienteId)
+            throws EntityNotFoundException {
+        var historicoHospitalar = historicoSaudeClienteService.buscarHistoricoHospital(clienteId);
+        return ResponseEntity.ok(historicoHospitalar);
     }
 
     @PostMapping("/historico-hospital")
     @Transactional
-    public ResponseEntity<DetalhesHistoricoHospitalClienteDto> cadastrar(
+    public ResponseEntity<HistoricoHospitalCliente> cadastrar(
             @RequestBody CadastroHistoricoHospitalClienteDto historicoHospitalClienteDto,
             UriComponentsBuilder uriBuilder) {
-        var historicoHospitalCliente = new HistoricoHospitalCliente(historicoHospitalClienteDto);
-        historicoSaudeClienteRepository.save(historicoHospitalCliente);
-        var url = uriBuilder.path("clientes/{clienteId}/historico-hospital").buildAndExpand(historicoHospitalCliente.getId())
-                .toUri();
-        return ResponseEntity.created(url).body(new DetalhesHistoricoHospitalClienteDto(historicoHospitalCliente));
+        var historicoHospitalCliente = historicoSaudeClienteService.cadastrarHistoricoHospital(historicoHospitalClienteDto);
+
+        return ResponseEntity.created(uriBuilder.path("/clientes/{clienteId}/historico-hospital")
+                .buildAndExpand(historicoHospitalCliente.getClienteId()).toUri())
+                .body(historicoHospitalCliente);
     }
 
     @PutMapping("/{clienteId}/historico-hospital")
     @Transactional
-    public ResponseEntity<DetalhesHistoricoHospitalClienteDto> atualizar(@PathVariable("clienteId") Long clienteId,
+    public ResponseEntity<HistoricoHospitalCliente> atualizar(@PathVariable("clienteId") Long clienteId,
                                                                 @RequestBody AtualizacaoHistoricoHospitalClienteDto historicoHospitalClienteDto) throws EntityNotFoundException {
-        var historicoHospitalar = historicoSaudeClienteRepository.findByClienteId(clienteId).
-                orElseThrow(EntityNotFoundException::new);
-        historicoHospitalar.atualizarDados(historicoHospitalClienteDto);
-        return ResponseEntity.ok(new DetalhesHistoricoHospitalClienteDto(historicoHospitalar));
+        var historicoHospitalCliente = historicoSaudeClienteService.atualizarHistoricoHospital(clienteId, historicoHospitalClienteDto);
+        return ResponseEntity.ok(historicoHospitalCliente);
     }
 
 }

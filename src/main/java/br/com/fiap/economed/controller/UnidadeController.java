@@ -1,5 +1,6 @@
 package br.com.fiap.economed.controller;
 
+import br.com.fiap.economed.service.UnidadeService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,49 +20,46 @@ import br.com.fiap.economed.repository.UnidadeRepository;
 @RequestMapping("/unidades")
 public class UnidadeController {
 
-    @Autowired
-    private UnidadeRepository unidadeRepository;
+    private final UnidadeService unidadeService;
+
+    public UnidadeController(UnidadeService unidadeService) {
+        this.unidadeService = unidadeService;
+    }
 
     @GetMapping
     public ResponseEntity<Page<DetalhesUnidadeDto>> listar(Pageable paginacao) {
-        var PaginaUnidades = unidadeRepository.findAll(paginacao).map(DetalhesUnidadeDto::new);
-        return ResponseEntity.ok(PaginaUnidades);
+        var paginaUnidades = unidadeService.listarUnidades(paginacao);
+        return ResponseEntity.ok(paginaUnidades);
     }
 
     @GetMapping("/{unidadeId}")
     public ResponseEntity<DetalhesUnidadeDto> buscar(@PathVariable("unidadeId") Long unidadeId)
             throws EntityNotFoundException {
-        var unidade = unidadeRepository.findById(unidadeId)
-                .orElseThrow(EntityNotFoundException::new);
-        return ResponseEntity.ok(new DetalhesUnidadeDto(unidade));
+        var unidade = unidadeService.buscarUnidade(unidadeId);
+        return ResponseEntity.ok(unidade);
     }
 
     @PostMapping
     @Transactional
-    public ResponseEntity<DetalhesUnidadeDto> cadastrar(@RequestBody CadastroUnidadeDto unidadeDto,
+    public ResponseEntity<Unidade> cadastrar(@RequestBody CadastroUnidadeDto unidadeDto,
             UriComponentsBuilder uriBuilder) {
-        var unidade = new Unidade(unidadeDto);
-        unidadeRepository.save(unidade);
-        var uri = uriBuilder.path("/clientes/{unidadeId}").buildAndExpand(unidade.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DetalhesUnidadeDto(unidade));
+        var unidade = unidadeService.cadastrarUnidade(unidadeDto);
+        return ResponseEntity.created(uriBuilder.path("/unidades/{unidadeId}").buildAndExpand(unidade.getId()).toUri())
+                .body(unidade);
     }
 
     @PutMapping("/{unidadeId}")
     @Transactional
-    public ResponseEntity<DetalhesUnidadeDto> atualizar(@PathVariable("unidadeId") Long unidadeId,
+    public ResponseEntity<Unidade> atualizar(@PathVariable("unidadeId") Long unidadeId,
             @RequestBody AtualizacaoUnidadeDto unidadeDto) throws EntityNotFoundException {
-        var unidade = unidadeRepository.findById(unidadeId)
-                .orElseThrow(EntityNotFoundException::new);
-        unidade.atualizarDados(unidadeDto);
-        return ResponseEntity.ok(new DetalhesUnidadeDto(unidade));
+        var unidade = unidadeService.atualizarUnidade(unidadeId, unidadeDto);
+        return ResponseEntity.ok(unidade);
     }
 
     @DeleteMapping("/{unidadeId}")
     @Transactional
     public ResponseEntity<Void> remover(@PathVariable("unidadeId") Long unidadeId) throws EntityNotFoundException {
-        var unidade = unidadeRepository.findById(unidadeId)
-                .orElseThrow(EntityNotFoundException::new);
-        unidadeRepository.delete(unidade);
+        unidadeService.removerUnidade(unidadeId);
         return ResponseEntity.noContent().build();
     }
 }

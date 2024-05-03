@@ -33,12 +33,12 @@ public class EnderecoUnidadeController {
 
     @PostMapping("/endereco")
     @Transactional
-    public ResponseEntity<DetalhesEnderecoUnidadeDto> create(@RequestBody CadastroEnderecoUnidadeDto enderecoDto,
+    public ResponseEntity<EnderecoUnidade> create(@RequestBody CadastroEnderecoUnidadeDto enderecoDto,
             UriComponentsBuilder uriBuilder) {
         var endereco = enderecoService.cadastrarEnderecoUnidade(enderecoDto);
 
         return ResponseEntity.created(uriBuilder.path("/unidades/{unidadeId}/endereco").buildAndExpand(endereco.getUnidadeId()).toUri())
-                .body(new DetalhesEnderecoUnidadeDto(endereco));
+                .body(endereco);
     }
 
     @PutMapping("/{unidadeId}/endereco")
