@@ -2,16 +2,16 @@ package br.com.fiap.economed.dto.historicoHospitalCliente;
 
 import br.com.fiap.economed.model.HistoricoHospitalCliente;
 
-public record DetalhesHistoricoHospitalClienteDto(
-        Long clienteId,
+public record DetalhesHistoricoHospitalClienteDTO(
+        Long id,
         String historicoMedico,
         String examesRealizados,
         String medicamentosPrescritos,
         String observacoes) {
 
-    public DetalhesHistoricoHospitalClienteDto(HistoricoHospitalCliente historicoHospitalCliente) {
+    public DetalhesHistoricoHospitalClienteDTO(HistoricoHospitalCliente historicoHospitalCliente) {
         this(
-                historicoHospitalCliente.getClienteId(),
+                historicoHospitalCliente.getId(),
                 historicoHospitalCliente.getHistoricoMedico(),
                 historicoHospitalCliente.getExamesRealizados(),
                 historicoHospitalCliente.getMedicamentosPrescritos(),

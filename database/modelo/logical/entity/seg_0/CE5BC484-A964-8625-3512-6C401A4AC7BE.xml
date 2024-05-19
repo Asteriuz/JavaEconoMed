@@ -22,7 +22,9 @@
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="horario_atendimento" id="E63C51CB-8D84-6526-B606-7BC18F296C97">
@@ -33,10 +35,13 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="07B06C68-5F9B-E4C6-B4DC-534E9CE44FFD">
+<Attribute name="Unidade id" id="07B06C68-5F9B-E4C6-B4DC-534E9CE44FFD">
 <createdBy>augus</createdBy>
 <createdTime>2024-04-02 06:29:55 UTC</createdTime>
 <generatorID>964EDFFF-C423-0EC0-3B31-524333D5931B</generatorID>
@@ -45,10 +50,12 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <referedAttribute>1012C4B2-B484-B1DF-DBA4-B639362FF235</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id2" id="25D11A61-DBDB-13BF-AEC4-2CA18705DC41">
+<Attribute name="Medico id" id="25D11A61-DBDB-13BF-AEC4-2CA18705DC41">
 <createdBy>augus</createdBy>
 <createdTime>2024-04-02 06:30:01 UTC</createdTime>
 <generatorID>05521D5C-804B-4CC7-CEBF-2D75300242D5</generatorID>
@@ -57,12 +64,14 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <referedAttribute>319AC895-E451-E324-2CAE-1D7F3E0E6834</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="08A5B694-B1D5-1A00-BF65-AF1D910090BB" name="Medico_Unidade PK">
+<identifier id="08A5B694-B1D5-1A00-BF65-AF1D910090BB" name="Medico_Unidade_PK">
 <createdBy>augus</createdBy>
 <createdTime>2024-04-02 06:29:57 UTC</createdTime>
 <ownerDesignName>modelo</ownerDesignName>

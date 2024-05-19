@@ -22,7 +22,9 @@
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nome" id="890C02E0-0C01-5D7C-EA73-297E15A0271A">
@@ -33,8 +35,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="telefone" id="8C6C06B4-4093-7200-77E5-0A032211E052">
 <createdBy>augus</createdBy>
@@ -44,8 +49,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="email" id="9D8AE271-8014-0065-146B-4CE18205794E">
 <createdBy>augus</createdBy>
@@ -55,8 +63,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="tipo" id="64125191-7BBD-5CF4-88BB-702730BC696F">
 <createdBy>augus</createdBy>
@@ -66,8 +77,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="capacidade" id="B8FC90B4-3196-C286-6CAD-E7203382A70A">
 <createdBy>augus</createdBy>
@@ -77,30 +91,37 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="especialidades" id="7AA36455-3999-BC5B-C7DA-FAE9C81ADE34">
-<createdBy>augus</createdBy>
-<createdTime>2024-04-02 06:16:18 UTC</createdTime>
+<Attribute name="id1" id="94E97928-1913-51D7-D6C8-3B258B4F3D73">
+<createdBy>gabsz</createdBy>
+<createdTime>2024-04-11 04:45:40 UTC</createdTime>
+<generatorID>226DA884-1DA8-4D15-2730-B7585D37114D</generatorID>
 <ownerDesignName>modelo</ownerDesignName>
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<referedAttribute>C41681AB-2F8A-1B30-CC25-A0087850CE1E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="3EBA6C9F-2BE9-55F6-145C-E5168D0451DC">
+<Attribute name="id2" id="73B12A2F-E58C-6DF0-62EF-C88743E578F8">
 <createdBy>augus</createdBy>
-<createdTime>2024-04-02 06:31:15 UTC</createdTime>
-<generatorID>957CA251-BE26-B83B-0395-5216F106FC02</generatorID>
+<createdTime>2024-04-15 04:10:47 UTC</createdTime>
+<generatorID>A6E3920B-2416-FCF2-D196-FFB2BEBA9417</generatorID>
 <ownerDesignName>modelo</ownerDesignName>
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<referedAttribute>60F8B924-B1F5-9094-1DE1-E4B102BDE4DE</referedAttribute>
-<use>0</use>
+<referedAttribute>B588DFE5-697B-AFFE-4621-03E73DB41ADA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

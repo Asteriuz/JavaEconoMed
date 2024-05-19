@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.convenio.AtualizacaoConvenioDto;
-import br.com.fiap.economed.dto.convenio.CadastroConvenioDto;
+import br.com.fiap.economed.dto.convenio.AtualizacaoConvenioDTO;
+import br.com.fiap.economed.dto.convenio.CadastroConvenioDTO;
 
 import java.time.LocalDate;
 
@@ -26,8 +26,9 @@ public class Convenio {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "empresa_id")
-    private Long empresaId;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id", referencedColumnName = "id")
+    private Empresa empresa;
 
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
@@ -47,8 +48,7 @@ public class Convenio {
     @Column(name = "validade")
     private LocalDate validade;
 
-    public Convenio(CadastroConvenioDto dto) {
-        this.empresaId = dto.empresaId();
+    public Convenio(CadastroConvenioDTO dto) {
         this.nome = dto.nome();
         this.valor = dto.valor();
         this.tipoServico = dto.tipoServico();
@@ -57,7 +57,7 @@ public class Convenio {
         this.validade = dto.validade();
     }
 
-    public void atualizarDados(AtualizacaoConvenioDto dto) {
+    public void atualizarDados(AtualizacaoConvenioDTO dto) {
         if (dto.nome() != null) {
             this.nome = dto.nome();
         }

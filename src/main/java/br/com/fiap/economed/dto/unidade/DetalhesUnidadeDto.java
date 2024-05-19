@@ -1,26 +1,25 @@
 package br.com.fiap.economed.dto.unidade;
 
 import br.com.fiap.economed.model.Unidade;
+import br.com.fiap.economed.dto.empresa.DetalhesEmpresaDTO;
 
-public record DetalhesUnidadeDto(
+public record DetalhesUnidadeDTO(
         Long id,
-        Long empresaId,
+        DetalhesEmpresaDTO empresa,
         String nome,
         String telefone,
         String email,
         String tipo,
-        Integer capacidade,
-        String especialidades) {
+        Integer capacidade) {
 
-    public DetalhesUnidadeDto(Unidade unidade) {
+    public DetalhesUnidadeDTO(Unidade unidade) {
         this(
                 unidade.getId(),
-                unidade.getEmpresaId(),
+                new DetalhesEmpresaDTO(unidade.getEmpresa()),
                 unidade.getNome(),
                 unidade.getTelefone(),
                 unidade.getEmail(),
                 unidade.getTipo(),
-                unidade.getCapacidade(),
-                unidade.getEspecialidades());
+                unidade.getCapacidade());
     }
 }

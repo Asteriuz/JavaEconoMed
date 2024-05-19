@@ -1,13 +1,12 @@
 package br.com.fiap.economed.model;
 
-import br.com.fiap.economed.dto.historicoHospitalCliente.AtualizacaoHistoricoHospitalClienteDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.historicoHospitalCliente.CadastroHistoricoHospitalClienteDto;
+import br.com.fiap.economed.dto.historicoHospitalCliente.CadastroHistoricoHospitalClienteDTO;
 
 import java.time.LocalDate;
 
@@ -26,9 +25,6 @@ public class HistoricoHospitalCliente {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "cliente_id", nullable = false)
-    private Long clienteId;
-
     @Column(name = "data_registro")
     private LocalDate dataRegistro;
 
@@ -44,31 +40,16 @@ public class HistoricoHospitalCliente {
     @Column(name = "observacoes", length = 100)
     private String observacoes;
 
-    public HistoricoHospitalCliente(CadastroHistoricoHospitalClienteDto dto) {
-        this.clienteId = dto.clienteId();
-        this.dataRegistro = dto.dataRegistro();
-        this.historicoMedico = dto.historicoMedico();
-        this.examesRealizados = dto.examesRealizados();
-        this.medicamentosPrescritos = dto.medicamentosPrescritos();
-        this.observacoes = dto.observacoes();
-    }
+    @OneToOne
+    @JoinColumn(name = "cliente_id", unique = true)
+    private Cliente cliente;
 
-    public void atualizarDados(AtualizacaoHistoricoHospitalClienteDto dto) {
-        if (dto.dataRegistro() != null) {
-            this.dataRegistro = dto.dataRegistro();
-        }
-        if (dto.historicoMedico() != null) {
-            this.historicoMedico = dto.historicoMedico();
-        }
-        if (dto.examesRealizados() != null) {
-            this.examesRealizados = dto.examesRealizados();
-        }
-        if (dto.medicamentosPrescritos() != null) {
-            this.medicamentosPrescritos = dto.medicamentosPrescritos();
-        }
-        if (dto.observacoes() != null) {
-            this.observacoes = dto.observacoes();
-        }
+    public HistoricoHospitalCliente(CadastroHistoricoHospitalClienteDTO dto) {
+        dataRegistro = dto.dataRegistro();
+        historicoMedico = dto.historicoMedico();
+        examesRealizados = dto.examesRealizados();
+        medicamentosPrescritos = dto.medicamentosPrescritos();
+        observacoes = dto.observacoes();
     }
 
 }

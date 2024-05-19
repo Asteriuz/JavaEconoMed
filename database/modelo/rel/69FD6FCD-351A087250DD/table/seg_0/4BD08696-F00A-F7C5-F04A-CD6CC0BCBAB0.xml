@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4BD08696-F00A-F7C5-F04A-CD6CC0BCBAB0" name="Endereco_Unidade">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>619CD26F-0B05-306F-BB95-1438201DD567</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="19EA30FF-5FF5-9AE5-99E3-3F66770BD4A6">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>58000105-F3E6-D904-B621-C24B1D55A1C5</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rua" id="A34ED2DA-5FF0-A513-2B42-1F8FD52A13C4">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>A04F80C7-33D9-126A-BFF6-BDFAAC486D6B</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="334295CF-6C89-C62E-14B7-690ABFD8310E">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>413DED17-DCC0-1865-796B-3CF20F0CFFE1</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cep" id="EC7FAD83-0A51-3C9F-EDF9-7827DAE983E4">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>AFDC88C3-8BD2-EE4C-DEC2-40524EBF04EA</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Unidade_id" id="06D36A54-A96C-BEC0-DECE-F99EA16C3D49">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>77467E15-F690-D8DB-DCA6-2F0A5F400B17</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="817F17A0-C163-74FA-36DE-F93B7049AC8C" referredColumn="8335B959-1A97-4AC9-72FB-B219D8A5A998"/>
+</associations>
+</Column>
+<Column name="Cidade_Cidade_ID" id="4DFAF161-5A85-F923-4B89-35404D20DB2E">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25BE218F-882E-AA85-0194-DED4552D0CA3" referredColumn="CFAC43F7-3915-149C-09DD-BD46FB906E02"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0BC74CCC-C868-C091-5339-616C2DFC69F2" name="Endereco_Unidade_PK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>69032E03-5DF9-4EE1-BD70-A5113EEC138B</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19EA30FF-5FF5-9AE5-99E3-3F66770BD4A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="885F0AF2-2866-6BB4-A6B3-6CBC84A3447F" name="Endereco_Unidade__IDX">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>30FD7518-9C6B-8AED-9D3A-CEBE65AACFBD</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="06D36A54-A96C-BEC0-DECE-F99EA16C3D49"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6A7FD30E-29DD-763F-EF9A-1359F227607C" name="Endereco_Unidade_Cidade_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<generatorID>90F487ED-8CE3-B912-B8EC-68566C1DEFB5</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DFAF161-5A85-F923-4B89-35404D20DB2E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFF4BCFA-D218-F71A-416F-6395B8CC01FB" name="Endereco_Unidade_Unidade_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<generatorID>30FD7518-9C6B-8AED-9D3A-CEBE65AACFBD</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="06D36A54-A96C-BEC0-DECE-F99EA16C3D49"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

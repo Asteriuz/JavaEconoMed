@@ -1,14 +1,13 @@
 package br.com.fiap.economed.model;
 
-import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
+import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.cliente.CadastroClienteDto;
-import br.com.fiap.economed.model.enums.EstadoCivilCliente;
+import br.com.fiap.economed.dto.cliente.CadastroClienteDTO;
 
 import java.time.LocalDate;
 
@@ -45,25 +44,34 @@ public class Cliente {
     @Column(name = "cpf", length = 20)
     private String cpf;
 
-    @Column(name = "estado_civil", length = 20)
-    @Enumerated(EnumType.STRING)
-    private EstadoCivilCliente estadoCivil;
+    @ManyToOne
+    @JoinColumn(name = "estado_civil_id", referencedColumnName = "id")
+    private EstadoCivil estadoCivil;
 
-    @Column(name = "convenio_id")
-    private Long convenioId;
+    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private EnderecoCliente endereco;
 
-    public Cliente(CadastroClienteDto dto) {
-        this.rg = dto.rg();
-        this.nome = dto.nome();
-        this.telefone = dto.telefone();
-        this.email = dto.email();
-        this.dataNascimento = dto.dataNascimento();
-        this.cpf = dto.cpf();
-        this.estadoCivil = dto.estadoCivil();
-        this.convenioId = dto.convenioId();
+    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private HistoricoHospitalCliente historicoHospital;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "convenio_id", referencedColumnName = "id")
+    private Convenio convenio;
+
+    public Cliente(CadastroClienteDTO dto) {
+        rg = dto.rg();
+        nome = dto.nome();
+        telefone = dto.telefone();
+        email = dto.email();
+        dataNascimento = dto.dataNascimento();
+        cpf = dto.cpf();
+
+        endereco = new EnderecoCliente(dto.endereco());
+        historicoHospital = new HistoricoHospitalCliente(dto.historicoHospital());
+
     }
 
-    public void atualizarDados(AtualizacaoClienteDto dto) {
+    public void atualizar(AtualizacaoClienteDTO dto) {
         if (dto.rg() != null) {
             this.rg = dto.rg();
         }
@@ -81,12 +89,6 @@ public class Cliente {
         }
         if (dto.cpf() != null) {
             this.cpf = dto.cpf();
-        }
-        if (dto.estadoCivil() != null) {
-            this.estadoCivil = dto.estadoCivil();
-        }
-        if (dto.convenioId() != null) {
-            this.convenioId = dto.convenioId();
         }
     }
 

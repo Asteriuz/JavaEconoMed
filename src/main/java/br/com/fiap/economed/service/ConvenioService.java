@@ -1,52 +1,55 @@
 package br.com.fiap.economed.service;
 
-import br.com.fiap.economed.dto.cliente.DetalhesClienteDto;
-import br.com.fiap.economed.dto.convenio.AtualizacaoConvenioDto;
-import br.com.fiap.economed.dto.convenio.CadastroConvenioDto;
-import br.com.fiap.economed.dto.convenio.DetalhesConvenioDto;
+import br.com.fiap.economed.dto.convenio.AtualizacaoConvenioDTO;
+import br.com.fiap.economed.dto.convenio.CadastroConvenioDTO;
+import br.com.fiap.economed.dto.convenio.DetalhesConvenioDTO;
 import br.com.fiap.economed.model.Convenio;
 import br.com.fiap.economed.repository.ConvenioRepository;
+import br.com.fiap.economed.repository.EmpresaRepository;
 import br.com.fiap.economed.service.interfaces.IConvenioService;
 import jakarta.persistence.EntityNotFoundException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class ConvenioService implements IConvenioService {
 
-    private final ConvenioRepository convenioRepository;
+    @Autowired
+    private ConvenioRepository convenioRepository;
 
-    public ConvenioService(ConvenioRepository convenioRepository) {
-        this.convenioRepository = convenioRepository;
-    }
-    
-    @Override
-    public Page<DetalhesConvenioDto> listarConvenio(Pageable paginacao) {
-        return convenioRepository.findAll(paginacao).map(DetalhesConvenioDto::new);
-    }
+    @Autowired
+    private EmpresaRepository empresaRepository;
 
     @Override
-    public DetalhesConvenioDto buscarConvenio(Long convenioId) throws EntityNotFoundException {
+    public Page<DetalhesConvenioDTO> listarConvenio(Pageable paginacao) {
+        return convenioRepository.findAll(paginacao).map(DetalhesConvenioDTO::new);
+    }
+
+    @Override
+    public DetalhesConvenioDTO buscarConvenio(Long convenioId) throws EntityNotFoundException {
         var convenio = convenioRepository.findById(convenioId)
                 .orElseThrow(() -> new EntityNotFoundException("Convenio não encontrado com ID: " + convenioId));
 
-        return (new DetalhesConvenioDto(convenio));
+        return (new DetalhesConvenioDTO(convenio));
     }
 
     @Override
-    public Convenio cadastrarConvenio(CadastroConvenioDto convenioDto) {
-        Convenio convenio = new Convenio(convenioDto);
+    public Convenio cadastrarConvenio(CadastroConvenioDTO convenioDTO) {
+        Convenio convenio = new Convenio(convenioDTO);
+        var empresa = empresaRepository.getReferenceById(convenioDTO.empresaId());
+        convenio.setEmpresa(empresa);
         return convenioRepository.save(convenio);
     }
 
     @Override
-    public Convenio atualizarConvenio(Long convenioId, AtualizacaoConvenioDto convenioDto) throws EntityNotFoundException {
+    public Convenio atualizarConvenio(Long convenioId, AtualizacaoConvenioDTO convenioDTO)
+            throws EntityNotFoundException {
         Convenio convenio = convenioRepository.findById(convenioId)
                 .orElseThrow(() -> new EntityNotFoundException("Convenio não encontrado com ID: " + convenioId));
-        convenio.atualizarDados(convenioDto);
+        convenio.atualizarDados(convenioDTO);
         return convenioRepository.save(convenio);
     }
 

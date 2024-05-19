@@ -1,0 +1,627 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "EconoMed",
+    "collectionId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+    "dateExported": "2024-05-19T02:07:32.911Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Cliente",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.095Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "720c4728-e6f3-4440-ac3d-762d032f2acd",
+            "name": "HistoricoHospital",
+            "containerId": "",
+            "created": "2024-05-19T00:51:03.172Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "1b94b0dc-0e1b-4f18-a359-ae602dc4e145",
+            "name": "HistoricoSaude",
+            "containerId": "",
+            "created": "2024-05-19T00:51:36.096Z",
+            "sortNum": 35000
+        },
+        {
+            "_id": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Convenio",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.099Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Empresa",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.100Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "cba8fe1a-7310-4099-8ca4-e749dfab6371",
+            "name": "Estado",
+            "containerId": "2ebb0ac7-d2de-45fe-b562-0f363228e3e4",
+            "created": "2024-04-15T20:02:16.576Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Unidade",
+            "containerId": "",
+            "created": "2024-04-03T23:00:38.101Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "2ebb0ac7-d2de-45fe-b562-0f363228e3e4",
+            "name": "Endereco",
+            "containerId": "",
+            "created": "2024-04-15T20:01:05.121Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "cdc65ca4-9b7a-4e24-bf52-3d16240f08d3",
+            "name": "Cidade",
+            "containerId": "2ebb0ac7-d2de-45fe-b562-0f363228e3e4",
+            "created": "2024-04-15T20:27:23.142Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "EnderecoCliente",
+            "containerId": "2ebb0ac7-d2de-45fe-b562-0f363228e3e4",
+            "created": "2024-04-03T23:00:38.096Z",
+            "sortNum": 140000
+        },
+        {
+            "_id": "65803a8b-baee-4f54-a301-e15c43b3a72b",
+            "name": "EnderecoUnidade",
+            "containerId": "2ebb0ac7-d2de-45fe-b562-0f363228e3e4",
+            "created": "2024-05-19T00:39:36.271Z",
+            "sortNum": 150000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "94e2b06b-e107-41fb-95e5-5e72a431c7ef",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "List",
+            "url": "http://localhost:8080/clientes",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-03T23:00:38.095Z",
+            "modified": "2024-04-15T18:48:35.843Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8ce2e2e3-c458-48d8-8c19-a3adf5c368d0",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "List",
+            "url": "http://localhost:8080/endereco-cliente",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-04-03T23:00:38.100Z",
+            "modified": "2024-05-19T00:37:14.099Z",
+            "headers": []
+        },
+        {
+            "_id": "03dcf4e4-79b2-4ac6-8a5c-537416bbac4b",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "65803a8b-baee-4f54-a301-e15c43b3a72b",
+            "name": "List",
+            "url": "http://localhost:8080/endereco-unidade",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-19T00:39:36.271Z",
+            "modified": "2024-05-19T00:39:59.538Z",
+            "headers": []
+        },
+        {
+            "_id": "611b4348-f5d2-4dee-b3c0-6b79e822d1ce",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "720c4728-e6f3-4440-ac3d-762d032f2acd",
+            "name": "List",
+            "url": "http://localhost:8080/historico-hospital",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-19T00:51:03.172Z",
+            "modified": "2024-05-19T00:51:55.234Z",
+            "headers": []
+        },
+        {
+            "_id": "fe9d5ffe-f9cb-46c2-af4c-06f6d1d1c1c5",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1b94b0dc-0e1b-4f18-a359-ae602dc4e145",
+            "name": "List",
+            "url": "http://localhost:8080/historico-saude",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-05-19T00:51:36.096Z",
+            "modified": "2024-05-19T00:52:18.213Z",
+            "headers": []
+        },
+        {
+            "_id": "c6aaaedb-e06f-4507-8870-2baa80879286",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "FindById",
+            "url": "http://localhost:8080/clientes/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-03T23:00:38.096Z",
+            "modified": "2024-04-15T18:28:31.593Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ebbd9afe-f41d-493e-9d81-950fe22e63f7",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "25732c69-27d1-4a46-8d9b-603ecfda0967",
+            "name": "FindById",
+            "url": "http://localhost:8080/endereco-cliente/1",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-05-19T00:37:34.002Z",
+            "modified": "2024-05-19T00:37:54.712Z",
+            "headers": []
+        },
+        {
+            "_id": "d867e98e-1e6a-4b73-833e-645f6e805da9",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "65803a8b-baee-4f54-a301-e15c43b3a72b",
+            "name": "FindById",
+            "url": "http://localhost:8080/endereco-unidade",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-05-19T00:39:36.272Z",
+            "modified": "2024-05-19T00:40:05.888Z",
+            "headers": []
+        },
+        {
+            "_id": "9d8842bc-9aac-409f-8ed3-57c1949d1876",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "720c4728-e6f3-4440-ac3d-762d032f2acd",
+            "name": "FindById",
+            "url": "http://localhost:8080/historico-hospital/1",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-05-19T00:51:03.173Z",
+            "modified": "2024-05-19T00:52:33.439Z",
+            "headers": []
+        },
+        {
+            "_id": "cc598917-e0e5-4975-84f3-ad4e5abc2e69",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1b94b0dc-0e1b-4f18-a359-ae602dc4e145",
+            "name": "FindById",
+            "url": "http://localhost:8080/historico-saude/1",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-05-19T00:51:36.097Z",
+            "modified": "2024-05-19T00:52:30.604Z",
+            "headers": []
+        },
+        {
+            "_id": "c6a19efd-412e-4c16-a0c2-b0303e59e568",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Create",
+            "url": "http://localhost:8080/clientes",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-04-03T23:00:38.097Z",
+            "modified": "2024-05-19T00:11:22.942Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"Augusto Barcelos Barros\",\n  \"telefone\": \"11223344\",\n  \"email\": \"joao.silva@email.com\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"cpf\": \"123.456.789-00\",\n  \"estadoCivilId\": 1,\n  \"convenioId\": 1,\n  \"endereco\": {\n    \"rua\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"cep\": \"12345-678\",\n    \"cidadeId\": 1\n  },\n  \"historicoHospital\": {\n    \"historicoMedico\": \"Cirurgia de apendicite em 2015\",\n    \"examesRealizados\": \"Exames de rotina\",\n    \"medicamentosPrescritos\": \"Paracetamol\",\n    \"observacoes\": \"Nenhuma observação\"\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "76a8de0f-7768-4dd5-a5e5-e9b4623589e4",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Update",
+            "url": "http://localhost:8080/clientes/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-04-03T23:00:38.098Z",
+            "modified": "2024-05-19T01:34:31.672Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"João Vô\",\n  \"telefone\": \"11223344\",\n  \"email\": \"joao.silva@email.com\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"cpf\": \"123.456.789-00\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "74209f1c-c759-4995-837b-064545b83187",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "b11fc3e2-94a7-4269-a2f0-615716d1002b",
+            "name": "Delete",
+            "url": "http://localhost:8080/clientes/6",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-04-03T23:00:38.099Z",
+            "modified": "2024-05-19T00:28:23.943Z",
+            "headers": []
+        },
+        {
+            "_id": "cc214471-c390-40e0-b72f-ffdece8ea555",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "List",
+            "url": "http://localhost:8080/convenios",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-04-03T23:00:38.109Z",
+            "modified": "2024-04-15T18:50:25.393Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2ffa87b8-58d8-4400-8e0e-1bfda5b0634c",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "FindById",
+            "url": "http://localhost:8080/convenios/1",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-04-03T23:00:38.110Z",
+            "modified": "2024-04-15T18:50:28.323Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0cd0b2a1-d363-4ab7-a4fe-11d9cb514949",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Create",
+            "url": "http://localhost:8080/convenios",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2024-04-03T23:00:38.111Z",
+            "modified": "2024-05-19T01:39:43.126Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Convenio C\",\n  \"empresaId\": 1,\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e465b8da-5ab4-4978-9f04-3499b0832886",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Update",
+            "url": "http://localhost:8080/convenios/1",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2024-04-03T23:00:38.112Z",
+            "modified": "2024-05-19T01:45:12.941Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Convenio E\",\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "362b3013-f753-4c0d-85b2-68823e7b6243",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fc8bd334-9b14-409a-82ad-452851168a72",
+            "name": "Delete",
+            "url": "http://localhost:8080/convenios/6",
+            "method": "DELETE",
+            "sortNum": 190000,
+            "created": "2024-04-03T23:00:38.113Z",
+            "modified": "2024-04-15T19:23:41.149Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2ff73697-137d-4608-b367-d0e75b8411ce",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "List",
+            "url": "http://localhost:8080/empresas",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2024-04-03T23:00:38.114Z",
+            "modified": "2024-04-15T18:51:00.166Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f96cffc3-bc2e-480a-9b59-8952577a478f",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cba8fe1a-7310-4099-8ca4-e749dfab6371",
+            "name": "List",
+            "url": "http://localhost:8080/estados",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2024-04-15T20:02:16.576Z",
+            "modified": "2024-04-15T20:02:45.239Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3b2a1160-7650-48fe-adcb-0f9d79093b1d",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cdc65ca4-9b7a-4e24-bf52-3d16240f08d3",
+            "name": "List",
+            "url": "http://localhost:8080/cidades",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2024-04-15T20:27:23.142Z",
+            "modified": "2024-05-19T00:25:15.687Z",
+            "headers": []
+        },
+        {
+            "_id": "d25a9553-87b7-40c6-bf7e-6c0c632cebad",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "FindById",
+            "url": "http://localhost:8080/empresas/1",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-04-03T23:00:38.115Z",
+            "modified": "2024-04-15T18:51:04.509Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "40aceb3b-22d4-422d-8b38-e8992a3bb557",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cba8fe1a-7310-4099-8ca4-e749dfab6371",
+            "name": "FindById",
+            "url": "http://localhost:8080/estados/1",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-04-15T20:02:16.577Z",
+            "modified": "2024-04-15T20:02:53.213Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0027e898-82e9-4b8f-b776-a6ff9d8afb1f",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Create",
+            "url": "http://localhost:8080/empresas",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2024-04-03T23:00:38.116Z",
+            "modified": "2024-04-15T18:51:18.572Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa J\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4fcd86af-fa75-4034-b999-95592c8f1514",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cba8fe1a-7310-4099-8ca4-e749dfab6371",
+            "name": "Create",
+            "url": "http://localhost:8080/estados",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2024-04-15T20:02:16.578Z",
+            "modified": "2024-04-15T20:03:23.361Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Acre\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c97a680d-54b9-4c52-a540-40961050b3cd",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cdc65ca4-9b7a-4e24-bf52-3d16240f08d3",
+            "name": "Create",
+            "url": "http://localhost:8080/cidades",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2024-04-15T20:27:23.144Z",
+            "modified": "2024-05-19T00:25:39.724Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"estadoId\": 1,\n  \"nome\": \"Barueri\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6becbdfb-ad07-4b6b-ab47-eec0a84e4c9d",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Update",
+            "url": "http://localhost:8080/empresas/1",
+            "method": "PUT",
+            "sortNum": 230000,
+            "created": "2024-04-03T23:00:38.117Z",
+            "modified": "2024-04-15T18:51:21.198Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa Porto Seguro\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dd46004a-43df-4b08-8385-a2b45ab6bfbd",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cba8fe1a-7310-4099-8ca4-e749dfab6371",
+            "name": "Update",
+            "url": "http://localhost:8080/estados/1",
+            "method": "PUT",
+            "sortNum": 230000,
+            "created": "2024-04-15T20:02:16.579Z",
+            "modified": "2024-04-15T20:06:05.376Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Sao Paulo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5be21cdd-b660-4a87-aaf4-bcfe1d466fe2",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cdc65ca4-9b7a-4e24-bf52-3d16240f08d3",
+            "name": "Update",
+            "url": "http://localhost:8080/cidades/1",
+            "method": "PUT",
+            "sortNum": 230000,
+            "created": "2024-04-15T20:27:23.145Z",
+            "modified": "2024-05-19T00:25:51.561Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Sao Paulo\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "96c4ab1a-c452-4bd8-b95a-c119a35ec68e",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "1950dd3d-d9eb-436b-a293-0d9266695714",
+            "name": "Delete",
+            "url": "http://localhost:8080/empresas/6",
+            "method": "DELETE",
+            "sortNum": 240000,
+            "created": "2024-04-03T23:00:38.118Z",
+            "modified": "2024-04-15T19:50:48.141Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e60f0677-d126-404a-80d1-d8f18b68795d",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cba8fe1a-7310-4099-8ca4-e749dfab6371",
+            "name": "Delete",
+            "url": "http://localhost:8080/estados/6",
+            "method": "DELETE",
+            "sortNum": 240000,
+            "created": "2024-04-15T20:02:16.580Z",
+            "modified": "2024-05-19T00:28:37.647Z",
+            "headers": []
+        },
+        {
+            "_id": "a89f6a0f-fc0b-4101-8faa-cbd6232d8210",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "cdc65ca4-9b7a-4e24-bf52-3d16240f08d3",
+            "name": "Delete",
+            "url": "http://localhost:8080/cidades/6",
+            "method": "DELETE",
+            "sortNum": 240000,
+            "created": "2024-04-15T20:27:23.146Z",
+            "modified": "2024-05-19T00:32:38.716Z",
+            "headers": []
+        },
+        {
+            "_id": "73456b7a-4381-49b9-a768-1db25f27ad66",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "List",
+            "url": "http://localhost:8080/unidades",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2024-04-03T23:00:38.119Z",
+            "modified": "2024-04-15T18:51:29.022Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "882f3cec-2a3b-40ef-9898-eca7df9d2d9b",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "FindById",
+            "url": "http://localhost:8080/unidades/1",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2024-04-03T23:00:38.120Z",
+            "modified": "2024-04-15T18:51:32.384Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5f32093d-8e03-43d9-a65c-bb60661692d2",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Create",
+            "url": "http://localhost:8080/unidades",
+            "method": "POST",
+            "sortNum": 270000,
+            "created": "2024-04-03T23:00:38.121Z",
+            "modified": "2024-05-19T02:04:16.428Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Unidade Z\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 100,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e633363c-6225-4561-a19b-9abbbd6ebd90",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Update",
+            "url": "http://localhost:8080/unidades/1",
+            "method": "PUT",
+            "sortNum": 280000,
+            "created": "2024-04-03T23:00:38.122Z",
+            "modified": "2024-05-19T02:03:00.261Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Unidade Amaral\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 500,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b841227f-e727-472f-9f08-eeae39998bc2",
+            "colId": "91454e78-3296-4852-b2da-fa57a0d3e300",
+            "containerId": "fe6a0d03-eb93-4eb3-be6c-8b66001b4ea3",
+            "name": "Delete",
+            "url": "http://localhost:8080/unidades/6",
+            "method": "DELETE",
+            "sortNum": 290000,
+            "created": "2024-04-03T23:00:38.123Z",
+            "modified": "2024-04-15T18:51:42.590Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "ref": "ngHkXMFjjfHcwLrksu1sCrnYHDrI2TTXmbJVngvBA8jTWdoOLcav6IoGTtbDet9MKij2c6_jywymvrx6SIcaGw"
+}

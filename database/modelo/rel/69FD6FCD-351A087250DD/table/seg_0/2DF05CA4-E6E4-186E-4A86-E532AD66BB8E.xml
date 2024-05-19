@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2DF05CA4-E6E4-186E-4A86-E532AD66BB8E" name="Historico_Saude_Cliente">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>0339AEC9-B070-25CE-AC83-44B43A5E07A0</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="62E3A079-E76D-6415-8A2F-621A745CB76F">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>8CED603C-C8F0-0D98-9DEE-AA15EA68119E</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_registro" id="127B559B-283F-7371-73D1-2D41FC45F9ED">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>D98E50D1-9331-9323-40AA-7D709CCEB133</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fuma" id="667A2B55-6C35-532B-3141-C21F3CC98F60">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>3B207464-B76C-F7A2-41D0-27539BC91A93</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="observacoes" id="3FD775B0-58AB-0D51-DFCA-6A856C0002FE">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>F4B2B231-F62F-98A9-7BDD-2D91C5A42E28</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_id" id="EBF021AE-E203-DC86-6666-22C313762860">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>8DCACE16-4686-6B1E-BCA4-C1A965B67B27</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C7E9D434-81F4-5082-1A45-56639E476723" referredColumn="07859E8D-3DC7-AE0F-5308-354325C4471D"/>
+</associations>
+</Column>
+<Column name="Comorbidade_id" id="062D8F05-76C9-8C18-1091-E0DF363B71D9">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>0D961445-105B-9211-DA0F-C0D96DE56A92</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CDA6E945-C776-05F3-F46E-720D7EAB48A3" referredColumn="264332CE-C751-92C0-E250-B71170839C17"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DECD3385-4DD0-0012-BD58-C42B8322BA11" name="Historico_Saude_Cliente_PK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>65CA26BB-41E6-4369-E7A0-53E050F76008</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62E3A079-E76D-6415-8A2F-621A745CB76F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3249768A-6874-E62A-E8E4-6572DA088DFA" name="Historico_Saude_Cliente__IDX">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>4D447808-DD4E-A420-541B-DD9CE8B314C4</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="EBF021AE-E203-DC86-6666-22C313762860"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BBF7B73-3C28-4D49-42F8-F2749DB8E9CB" name="Historico_Saude_Cliente_Cliente_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<generatorID>4D447808-DD4E-A420-541B-DD9CE8B314C4</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EBF021AE-E203-DC86-6666-22C313762860"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F614E1F-0EAE-DFB3-0469-BCD58006F449" name="Historico_Saude_Cliente_Comorbidade_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<generatorID>DEC6EABC-5212-7E58-A042-A11542877E97</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="062D8F05-76C9-8C18-1091-E0DF363B71D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

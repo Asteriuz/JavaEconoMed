@@ -12,7 +12,7 @@ public class ErrorHandler {
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<String> handleEntityNotFoundException(EntityNotFoundException ex, WebRequest request){
-        String bodyOfResponse = "Error 404 - Entity Not Found";
+        String bodyOfResponse = ex.getMessage();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(bodyOfResponse);
     }
 }

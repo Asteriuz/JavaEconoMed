@@ -1,50 +1,48 @@
 package br.com.fiap.economed.service;
 
-import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDto;
-import br.com.fiap.economed.dto.empresa.CadastroEmpresaDto;
-import br.com.fiap.economed.dto.empresa.DetalhesEmpresaDto;
+import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDTO;
+import br.com.fiap.economed.dto.empresa.CadastroEmpresaDTO;
+import br.com.fiap.economed.dto.empresa.DetalhesEmpresaDTO;
 import br.com.fiap.economed.model.Empresa;
 import br.com.fiap.economed.repository.EmpresaRepository;
 import br.com.fiap.economed.service.interfaces.IEmpresaService;
 import jakarta.persistence.EntityNotFoundException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class EmpresaService implements IEmpresaService {
 
-    private final EmpresaRepository empresaRepository;
+    @Autowired
+    private EmpresaRepository empresaRepository;
 
-    public EmpresaService(EmpresaRepository empresaRepository) {
-        this.empresaRepository = empresaRepository;
+    @Override
+    public Page<DetalhesEmpresaDTO> listarEmpresas(Pageable paginacao) {
+        return empresaRepository.findAll(paginacao).map(DetalhesEmpresaDTO::new);
     }
 
     @Override
-    public Page<DetalhesEmpresaDto> listarEmpresas(Pageable paginacao) {
-        return empresaRepository.findAll(paginacao).map(DetalhesEmpresaDto::new);
-    }
-
-    @Override
-    public DetalhesEmpresaDto buscarEmpresa(Long empresaId) throws EntityNotFoundException {
+    public DetalhesEmpresaDTO buscarEmpresa(Long empresaId) throws EntityNotFoundException {
         var empresa = empresaRepository.findById(empresaId)
                 .orElseThrow(() -> new EntityNotFoundException("Empresa não encontrada com ID: " + empresaId));
 
-        return (new DetalhesEmpresaDto(empresa));
+        return (new DetalhesEmpresaDTO(empresa));
     }
 
     @Override
-    public Empresa cadastrarEmpresa(CadastroEmpresaDto empresaDto) {
-        Empresa empresa = new Empresa(empresaDto);
+    public Empresa cadastrarEmpresa(CadastroEmpresaDTO empresaDTO) {
+        Empresa empresa = new Empresa(empresaDTO);
         return empresaRepository.save(empresa);
     }
 
     @Override
-    public Empresa atualizarEmpresa(Long empresaId, AtualizacaoEmpresaDto empresaDto) throws EntityNotFoundException {
+    public Empresa atualizarEmpresa(Long empresaId, AtualizacaoEmpresaDTO empresaDTO) throws EntityNotFoundException {
         var empresa = empresaRepository.findById(empresaId)
                 .orElseThrow(() -> new EntityNotFoundException("Empresa não encontrada com ID: " + empresaId));
-        empresa.atualizarDados(empresaDto);
+        empresa.atualizarDados(empresaDTO);
         return empresaRepository.save(empresa);
     }
 

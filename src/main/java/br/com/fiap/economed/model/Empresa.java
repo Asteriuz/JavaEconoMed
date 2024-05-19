@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.empresa.CadastroEmpresaDto;
-import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDto;
+import br.com.fiap.economed.dto.empresa.CadastroEmpresaDTO;
+import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDTO;
 
 @Getter
 @Setter
@@ -30,7 +30,6 @@ public class Empresa {
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    // TODO: Quais tipos de empresas podem ser cadastradas? Vamos criar um enum pra isso?
     @Column(name = "tipo", nullable = false, length = 100)
     private String tipo;
 
@@ -40,20 +39,15 @@ public class Empresa {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    // TODO: Quais áreas de atuação podem ser cadastradas? Vamos criar um enum pra isso?
-    @Column(name = "area_atuacao", nullable = false, length = 100)
-    private String areaAtuacao;
-
-    public Empresa(CadastroEmpresaDto dto) {
+    public Empresa(CadastroEmpresaDTO dto) {
         this.cnpj = dto.cnpj();
         this.nome = dto.nome();
         this.tipo = dto.tipo();
         this.telefone = dto.telefone();
         this.email = dto.email();
-        this.areaAtuacao = dto.areaAtuacao();
     }
 
-    public void atualizarDados(AtualizacaoEmpresaDto dto) {
+    public void atualizarDados(AtualizacaoEmpresaDTO dto) {
         if (dto.cnpj() != null) {
             this.cnpj = dto.cnpj();
         }
@@ -69,9 +63,7 @@ public class Empresa {
         if (dto.email() != null) {
             this.email = dto.email();
         }
-        if (dto.areaAtuacao() != null) {
-            this.areaAtuacao = dto.areaAtuacao();
-        }
+
     }
 
 }

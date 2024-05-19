@@ -2,7 +2,7 @@ package br.com.fiap.economed.dto.convenio;
 
 import java.time.LocalDate;
 
-public record AtualizacaoConvenioDto(
+public record AtualizacaoConvenioDTO(
         String nome,
         Double valor,
         String tipoServico,

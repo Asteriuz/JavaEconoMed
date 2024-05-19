@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C7E9D434-81F4-5082-1A45-56639E476723" containerWithKeyObject="2DF05CA4-E6E4-186E-4A86-E532AD66BB8E" localFKIndex="2BBF7B73-3C28-4D49-42F8-F2749DB8E9CB" name="Historico_Saude_Cliente_Cliente_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<generatorID>4D447808-DD4E-A420-541B-DD9CE8B314C4</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<referredTableLongName>Cliente</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2A23265C-E7C1-3EF0-27C2-CF6DDFF8B1CE</referredTableID>
+<keyObject>FD05716F-2118-61A4-0E25-D13F8004726F</keyObject>
+<referredKeyID>FD05716F-2118-61A4-0E25-D13F8004726F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

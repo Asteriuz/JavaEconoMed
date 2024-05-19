@@ -1,10 +1,8 @@
 package br.com.fiap.economed.controller;
 
-import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDto;
-import br.com.fiap.economed.dto.convenio.DetalhesConvenioDto;
+import br.com.fiap.economed.dto.cliente.AtualizacaoClienteDTO;
 import br.com.fiap.economed.service.ClienteService;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.fiap.economed.dto.cliente.CadastroClienteDto;
-import br.com.fiap.economed.dto.cliente.DetalhesClienteDto;
-import br.com.fiap.economed.model.Cliente;
-import br.com.fiap.economed.repository.ClienteRepository;
-
-import java.util.List;
+import br.com.fiap.economed.dto.cliente.CadastroClienteDTO;
+import br.com.fiap.economed.dto.cliente.DetalhesClienteDTO;
 
 @RestController
 @RequestMapping("/clientes")
@@ -30,13 +24,13 @@ public class ClienteController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DetalhesClienteDto>> list(Pageable paginacao) {
+    public ResponseEntity<Page<DetalhesClienteDTO>> list(Pageable paginacao) {
         var paginaClientes = clienteService.listarClientes(paginacao);
         return ResponseEntity.ok(paginaClientes);
     }
 
     @GetMapping("/{clienteId}")
-    public ResponseEntity<DetalhesClienteDto> search(@PathVariable Long clienteId)
+    public ResponseEntity<DetalhesClienteDTO> search(@PathVariable Long clienteId)
             throws EntityNotFoundException {
         var cliente = clienteService.buscarCliente(clienteId);
         return ResponseEntity.ok(cliente);
@@ -44,20 +38,22 @@ public class ClienteController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<Cliente> create(@RequestBody CadastroClienteDto clienteDto,
-                                                   UriComponentsBuilder uriBuilder) {
-        var cliente = clienteService.cadastrarCliente(clienteDto);
+    public ResponseEntity<DetalhesClienteDTO> create(@RequestBody CadastroClienteDTO clienteDTO,
+            UriComponentsBuilder uriBuilder) {
 
-        return ResponseEntity.created(uriBuilder.path("/clientes/{clienteId}").buildAndExpand(cliente.getId()).toUri())
-                .body(cliente);
+        var cliente = clienteService.cadastrarCliente(clienteDTO);
+
+        var uri = uriBuilder.path("/clientes/{id}").buildAndExpand(cliente.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DetalhesClienteDTO(cliente));
+
     }
 
     @PutMapping("/{clienteId}")
-    public ResponseEntity<Cliente> update(@PathVariable Long clienteId,
-                                                    @RequestBody AtualizacaoClienteDto clienteDto)
+    public ResponseEntity<DetalhesClienteDTO> update(@PathVariable Long clienteId,
+            @RequestBody AtualizacaoClienteDTO clienteDTO)
             throws EntityNotFoundException {
-        var cliente = clienteService.atualizarCliente(clienteId, clienteDto);
-        return ResponseEntity.ok(cliente);
+        var cliente = clienteService.atualizarCliente(clienteId, clienteDTO);
+        return ResponseEntity.ok(new DetalhesClienteDTO(cliente));
     }
 
     @DeleteMapping("/{clienteId}")
