@@ -22,7 +22,9 @@
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="data_registro" id="D98E50D1-9331-9323-40AA-7D709CCEB133">
@@ -33,10 +35,12 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fumo" id="3B207464-B76C-F7A2-41D0-27539BC91A93">
+<Attribute name="fuma" id="3B207464-B76C-F7A2-41D0-27539BC91A93">
 <createdBy>augus</createdBy>
 <createdTime>2024-04-03 09:46:57 UTC</createdTime>
 <ownerDesignName>modelo</ownerDesignName>
@@ -44,40 +48,9 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="doenca_principal" id="8A5CA8CB-AD51-E943-CC31-293032C8D21C">
-<createdBy>augus</createdBy>
-<createdTime>2024-04-03 09:46:59 UTC</createdTime>
-<ownerDesignName>modelo</ownerDesignName>
-<engineerTo>
-<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="historico_familiar" id="D4DDAED4-8E1E-4E41-59E8-0108D70FE34D">
-<createdBy>augus</createdBy>
-<createdTime>2024-04-03 09:47:03 UTC</createdTime>
-<ownerDesignName>modelo</ownerDesignName>
-<engineerTo>
-<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="alergias" id="FE3D9EDB-1CE8-E5D1-62A1-24F5502F29A5">
-<createdBy>augus</createdBy>
-<createdTime>2024-04-03 09:47:09 UTC</createdTime>
-<ownerDesignName>modelo</ownerDesignName>
-<engineerTo>
-<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="observacoes" id="F4B2B231-F62F-98A9-7BDD-2D91C5A42E28">
@@ -88,10 +61,13 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="8DCACE16-4686-6B1E-BCA4-C1A965B67B27">
+<Attribute name="Cliente id" id="8DCACE16-4686-6B1E-BCA4-C1A965B67B27">
 <createdBy>augus</createdBy>
 <createdTime>2024-04-04 03:03:30 UTC</createdTime>
 <generatorID>4D447808-DD4E-A420-541B-DD9CE8B314C4</generatorID>
@@ -100,12 +76,28 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <referedAttribute>7599A3C0-7923-493F-05BA-EA64A970B9D5</referedAttribute>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="0D961445-105B-9211-DA0F-C0D96DE56A92">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:03 UTC</createdTime>
+<generatorID>DEC6EABC-5212-7E58-A042-A11542877E97</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<referedAttribute>5C4D9717-5172-197B-5111-588833DD0730</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="65CA26BB-41E6-4369-E7A0-53E050F76008" name="Historico_Saude_Cliente PK">
+<identifier id="65CA26BB-41E6-4369-E7A0-53E050F76008" name="Historico_Saude_Cliente_PK">
 <createdBy>augus</createdBy>
 <createdTime>2024-04-04 02:53:59 UTC</createdTime>
 <ownerDesignName>modelo</ownerDesignName>

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8C2A3CE2-C6D1-BCD2-272F-693895ED151B" name="Empresa">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>6626FA7C-C97B-5196-B62E-4605BB726C88</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="DCF88218-0D41-FF6B-BA9A-55A24D167D2B">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>C41681AB-2F8A-1B30-CC25-A0087850CE1E</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cnpj" id="79D13059-CAEF-2E96-0565-45AB85EEC824">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>2B87EBBE-BF08-5D4C-26E8-2AB66F2CD4BE</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="8C2FF9BB-0FC2-D44E-61C8-DAE3CFF9ABF0">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>B579808B-7EF5-B033-DCAE-B7E4563B3E37</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="9436D63D-924F-E859-C938-02BA5843BDD1">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>C8DB5800-673F-23A8-9F65-C34B2BC47F1C</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefone" id="7D0EB87A-E33C-116A-ACDB-E8B88F9A5DD3">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>B156E0E2-4576-8810-F3C3-B3167493CB7F</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="6EA2C7FE-09E2-366C-55D2-37C3D157BB84">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>91FDCEA1-7E0E-964B-7998-F0D9CD72B4C8</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C725F1AC-9237-CF0B-01A5-A7812C95B37E" name="Empresa_PK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>5E53A9C7-AF6A-5867-52FF-8D16A5E9FC5D</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DCF88218-0D41-FF6B-BA9A-55A24D167D2B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

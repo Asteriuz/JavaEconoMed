@@ -6,9 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import br.com.fiap.economed.dto.unidade.AtualizacaoUnidadeDto;
-import br.com.fiap.economed.dto.unidade.CadastroUnidadeDto;
-
+import br.com.fiap.economed.dto.unidade.AtualizacaoUnidadeDTO;
+import br.com.fiap.economed.dto.unidade.CadastroUnidadeDTO;
 
 @Getter
 @Setter
@@ -25,8 +24,9 @@ public class Unidade {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "empresa_id")
-    private Long empresaId;
+    @ManyToOne
+    @JoinColumn(name = "empresa_id", referencedColumnName = "id")
+    private Empresa empresa;
 
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
@@ -43,20 +43,15 @@ public class Unidade {
     @Column(name = "capacidade")
     private Integer capacidade;
 
-    @Column(name = "especialidades", length = 100)
-    private String especialidades;
-
-    public Unidade(CadastroUnidadeDto dto) {
-        this.empresaId = dto.empresaId();
+    public Unidade(CadastroUnidadeDTO dto) {
         this.nome = dto.nome();
         this.telefone = dto.telefone();
         this.email = dto.email();
         this.tipo = dto.tipo();
         this.capacidade = dto.capacidade();
-        this.especialidades = dto.especialidades();
     }
 
-    public void atualizarDados(AtualizacaoUnidadeDto dto) {
+    public void atualizarDados(AtualizacaoUnidadeDTO dto) {
         if (dto.nome() != null) {
             this.nome = dto.nome();
         }
@@ -71,9 +66,6 @@ public class Unidade {
         }
         if (dto.capacidade() != null) {
             this.capacidade = dto.capacidade();
-        }
-        if (dto.especialidades() != null) {
-            this.especialidades = dto.especialidades();
         }
     }
 

@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EEC80213-1024-8E8F-E562-845A4B9C6F88" name="Cidade">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-11 02:34:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="B5C2937D-0A11-CE01-19B6-FCB14FF0F232">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-11 02:34:10 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="889A2637-A6CD-D597-E5D7-450F17D51D7F">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-11 02:34:12 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="010573A6-D1D2-5852-FE74-4C58C2AC24EF" name="Cidade PK">
+<createdBy>logonrmlocal</createdBy>
+<createdTime>2024-04-12 23:24:09 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B5C2937D-0A11-CE01-19B6-FCB14FF0F232</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

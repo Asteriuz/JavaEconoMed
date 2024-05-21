@@ -1,12 +1,13 @@
 package br.com.fiap.economed.dto.convenio;
 
 import br.com.fiap.economed.model.Convenio;
+import br.com.fiap.economed.dto.empresa.DetalhesEmpresaDTO;
 
 import java.time.LocalDate;
 
-public record DetalhesConvenioDto(
+public record DetalhesConvenioDTO(
         Long id,
-        Long empresaId,
+        DetalhesEmpresaDTO empresa,
         String nome,
         Double valor,
         String tipoServico,
@@ -14,10 +15,10 @@ public record DetalhesConvenioDto(
         String contato,
         LocalDate validade) {
 
-    public DetalhesConvenioDto(Convenio convenio) {
+    public DetalhesConvenioDTO(Convenio convenio) {
         this(
                 convenio.getId(),
-                convenio.getEmpresaId(),
+                new DetalhesEmpresaDTO(convenio.getEmpresa()),
                 convenio.getNome(),
                 convenio.getValor(),
                 convenio.getTipoServico(),

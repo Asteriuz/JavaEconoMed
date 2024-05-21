@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Cidade Estado FK" directorySegmentName="seg_0" id="504A08C6-D3AF-5F19-D7A2-D937E5112322">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-11 02:35:25 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F00215AB-A3A8-58DB-C293-9D9A8CE70DAC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>EEC80213-1024-8E8F-E562-845A4B9C6F88</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

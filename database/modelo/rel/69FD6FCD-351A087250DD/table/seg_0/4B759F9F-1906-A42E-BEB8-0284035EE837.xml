@@ -1,0 +1,138 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4B759F9F-1906-A42E-BEB8-0284035EE837" name="Historico_Hospital">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>9D68900E-857D-3F47-B4FF-9697766204BB</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="CDAE50E1-799B-ACA7-73DC-173F8F82D24C">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>D518CE9D-71D3-5F8E-B4FC-B534ED3F0060</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_registro" id="688B9943-AF46-E1C5-CBEF-6D5795120033">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>D0CAF755-DDAD-3BAD-EB8C-8350406E2434</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="historico_medico" id="6BBF7E14-0E4E-3458-B763-5B54F715B23A">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>B7584ABE-6F8A-838D-AD33-876A06B8135C</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="exame_realizado" id="F69BC4B1-5489-C512-4A06-2FA6ADDE313F">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>ADEBACDA-0CB7-5065-D812-8B50C2B9F101</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="medicamento_prescrito" id="024910B9-C7F0-0762-88DE-0064619476EC">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>C0FA53A6-1D14-FF31-7C78-D27C5BC9FAAB</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="observacoes" id="6DAF222D-0CDF-54BF-E02E-A3C76CAB931A">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>6A2BC2EE-915C-C261-260E-A7E6691F255A</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_id" id="9F5403E5-D1E8-291E-A7DA-DB1897CDA5C8">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>F632FEC3-07DD-476D-A694-B6FDCBD9C343</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E205E6A2-CBDE-34CD-71E8-D6F71DCD6E02" referredColumn="07859E8D-3DC7-AE0F-5308-354325C4471D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4AF13ABF-2286-D335-25CC-DC3BB857EB12" name="Historico_Hospital_PK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:16 UTC</createdTime>
+<generatorID>BADF875C-C837-F3C2-AD0D-1A48B80E0275</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDAE50E1-799B-ACA7-73DC-173F8F82D24C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52D6E895-4C0B-BF17-2DCC-ED07E60600CE" name="Historico_Hospital__IDX">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>F85FE85C-82BA-0EDF-1FF4-4BDCB29CFA28</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="9F5403E5-D1E8-291E-A7DA-DB1897CDA5C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A5F11A7-2D94-8489-5A59-E9F782E348A5" name="Historico_Hospital_Cliente_FK">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-15 04:28:17 UTC</createdTime>
+<generatorID>F85FE85C-82BA-0EDF-1FF4-4BDCB29CFA28</generatorID>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F5403E5-D1E8-291E-A7DA-DB1897CDA5C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

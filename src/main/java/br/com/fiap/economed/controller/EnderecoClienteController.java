@@ -1,49 +1,32 @@
 package br.com.fiap.economed.controller;
 
-import br.com.fiap.economed.dto.clienteEndereco.AtualizacaoEnderecoClienteDto;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import br.com.fiap.economed.dto.clienteEndereco.CadastroEnderecoClienteDto;
-import br.com.fiap.economed.dto.clienteEndereco.DetalhesEnderecoClienteDto;
-import br.com.fiap.economed.model.EnderecoCliente;
+import br.com.fiap.economed.dto.enderecoCliente.DetalhesEnderecoClienteDTO;
 import br.com.fiap.economed.repository.EnderecoClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/endereco-cliente")
 public class EnderecoClienteController {
 
     @Autowired
-    private EnderecoClienteRepository enderecoRepository;
+    private EnderecoClienteRepository enderecoClienteRepository;
 
-    @GetMapping("/{clienteId}/endereco")
-    public ResponseEntity<DetalhesEnderecoClienteDto> buscar(@PathVariable("clienteId") Long clienteId) throws EntityNotFoundException {
-        var endereco = enderecoRepository.findByClienteId(clienteId).
-                orElseThrow(EntityNotFoundException::new);
-        return ResponseEntity.ok(new DetalhesEnderecoClienteDto(endereco));
+    @GetMapping
+    public ResponseEntity<Page<DetalhesEnderecoClienteDTO>> pesquisar(Pageable pageable) {
+        var page = enderecoClienteRepository.findAll(pageable).map(DetalhesEnderecoClienteDTO::new);
+        return ResponseEntity.ok(page);
     }
 
-    @PostMapping("/endereco")
-    @Transactional
-    public ResponseEntity<DetalhesEnderecoClienteDto> cadastrar(@RequestBody CadastroEnderecoClienteDto enderecoDto,
-            UriComponentsBuilder uriBuilder) {
-        var endereco = new EnderecoCliente(enderecoDto);
-        enderecoRepository.save(endereco);
-        var uri = uriBuilder.path("clientes/{clienteId}/endereco").buildAndExpand(endereco.getClienteId()).toUri();
-        return ResponseEntity.created(uri).body(new DetalhesEnderecoClienteDto(endereco));
-    }
-
-    @PutMapping("/{clienteId}/endereco")
-    @Transactional
-    public ResponseEntity<DetalhesEnderecoClienteDto> atualizar(@PathVariable("clienteId") Long clienteId,
-            @RequestBody AtualizacaoEnderecoClienteDto enderecoDto) throws EntityNotFoundException {
-        var endereco = enderecoRepository.findById(clienteId).
-                orElseThrow(EntityNotFoundException::new);
-        endereco.atualizarDados(enderecoDto);
-        return ResponseEntity.ok(new DetalhesEnderecoClienteDto(endereco));
+    @GetMapping("/{id}")
+    public ResponseEntity<DetalhesEnderecoClienteDTO> pesquisar(@PathVariable("id") Long id) {
+        var endereco = new DetalhesEnderecoClienteDTO(enderecoClienteRepository.getReferenceById(id));
+        return ResponseEntity.ok(endereco);
     }
 }

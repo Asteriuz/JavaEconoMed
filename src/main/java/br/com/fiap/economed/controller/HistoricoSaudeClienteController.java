@@ -1,52 +1,32 @@
 package br.com.fiap.economed.controller;
 
-import br.com.fiap.economed.dto.historicoSaudeCliente.AtualizacaoHistoricoSaudeClienteDto;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import br.com.fiap.economed.dto.historicoSaudeCliente.CadastroHistoricoSaudeClienteDto;
-import br.com.fiap.economed.dto.historicoSaudeCliente.DetalhesHistoricoSaudeClienteDto;
-import br.com.fiap.economed.model.HistoricoSaudeCliente;
+import br.com.fiap.economed.dto.historicoSaudeCliente.DetalhesHistoricoSaudeClienteDTO;
 import br.com.fiap.economed.repository.HistoricoSaudeClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/historico-saude")
 public class HistoricoSaudeClienteController {
 
     @Autowired
     private HistoricoSaudeClienteRepository historicoSaudeClienteRepository;
 
-    @GetMapping("/{clienteId}/historico-saude")
-    public ResponseEntity<DetalhesHistoricoSaudeClienteDto> buscar(@PathVariable("clienteId") Long clienteId) throws EntityNotFoundException {
-        var historicoSaude = historicoSaudeClienteRepository.findByClienteId(clienteId).
-                orElseThrow(EntityNotFoundException::new);
-        return ResponseEntity.ok(new DetalhesHistoricoSaudeClienteDto(historicoSaude));
+    @GetMapping
+    public ResponseEntity<Page<DetalhesHistoricoSaudeClienteDTO>> pesquisar(Pageable pageable) {
+        var page = historicoSaudeClienteRepository.findAll(pageable).map(DetalhesHistoricoSaudeClienteDTO::new);
+        return ResponseEntity.ok(page);
     }
 
-    @PostMapping("/historico-saude")
-    @Transactional
-    public ResponseEntity<DetalhesHistoricoSaudeClienteDto> cadastrar(
-            @RequestBody CadastroHistoricoSaudeClienteDto historicoSaudeClienteDto,
-            UriComponentsBuilder uriBuilder) {
-        var historicoSaudeCliente = new HistoricoSaudeCliente(historicoSaudeClienteDto);
-        historicoSaudeClienteRepository.save(historicoSaudeCliente);
-        var url = uriBuilder.path("clientes/{clienteId}/historico-saude").buildAndExpand(historicoSaudeCliente.getId())
-                .toUri();
-        return ResponseEntity.created(url).body(new DetalhesHistoricoSaudeClienteDto(historicoSaudeCliente));
+    @GetMapping("/{id}")
+    public ResponseEntity<DetalhesHistoricoSaudeClienteDTO> pesquisar(@PathVariable("id") Long id) {
+        var endereco = new DetalhesHistoricoSaudeClienteDTO(historicoSaudeClienteRepository.getReferenceById(id));
+        return ResponseEntity.ok(endereco);
     }
-
-    @PutMapping("/{clienteId}/historico-saude")
-    @Transactional
-    public ResponseEntity<DetalhesHistoricoSaudeClienteDto> atualizar(@PathVariable("clienteId") Long clienteId,
-                                                                         @RequestBody AtualizacaoHistoricoSaudeClienteDto historicoSaudeCliente) throws EntityNotFoundException {
-        var historicoSaude = historicoSaudeClienteRepository.findByClienteId(clienteId).
-                orElseThrow(EntityNotFoundException::new);
-        historicoSaude.atualizarDados(historicoSaudeCliente);
-        return ResponseEntity.ok(new DetalhesHistoricoSaudeClienteDto(historicoSaude));
-    }
-
 }

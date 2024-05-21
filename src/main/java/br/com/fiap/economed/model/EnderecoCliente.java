@@ -1,13 +1,11 @@
 package br.com.fiap.economed.model;
 
-import br.com.fiap.economed.dto.clienteEndereco.AtualizacaoEnderecoClienteDto;
+import br.com.fiap.economed.dto.enderecoCliente.CadastroEnderecoClienteDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import br.com.fiap.economed.dto.clienteEndereco.CadastroEnderecoClienteDto;
 
 @Getter
 @Setter
@@ -24,43 +22,26 @@ public class EnderecoCliente {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "cliente_id", nullable = false)
-    private Long clienteId;
-
     @Column(name = "rua", length = 100)
     private String rua;
 
     @Column(name = "numero", length = 10)
     private String numero;
 
-    @Column(name = "cidade", length = 100)
-    private String cidade;
-
-    @Column(name = "estado", length = 100)
-    private String estado;
-
     @Column(name = "cep", length = 20)
     private String cep;
 
-    public EnderecoCliente(CadastroEnderecoClienteDto dto) {
-        this.clienteId = dto.clienteId();
+    @OneToOne
+    @JoinColumn(name = "cliente_id", unique = true)
+    private Cliente cliente;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "cidade_id")
+    private Cidade cidade;
+
+    public EnderecoCliente(CadastroEnderecoClienteDTO dto) {
         this.rua = dto.rua();
         this.numero = dto.numero();
-        this.cidade = dto.cidade();
-        this.estado = dto.estado();
         this.cep = dto.cep();
-    }
-
-    public void atualizarDados(AtualizacaoEnderecoClienteDto dto) {
-        if (dto.rua() != null)
-            rua = dto.rua();
-        if (dto.numero() != null)
-            numero = dto.numero();
-        if (dto.cidade() != null)
-            cidade = dto.cidade();
-        if (dto.estado() != null)
-            estado = dto.estado();
-        if (dto.cep() != null)
-            cep = dto.cep();
     }
 }

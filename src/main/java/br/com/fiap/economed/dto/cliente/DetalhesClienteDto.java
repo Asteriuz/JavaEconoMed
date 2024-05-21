@@ -1,11 +1,14 @@
 package br.com.fiap.economed.dto.cliente;
 
+import br.com.fiap.economed.dto.enderecoCliente.DetalhesEnderecoClienteDTO;
+import br.com.fiap.economed.dto.historicoHospitalCliente.DetalhesHistoricoHospitalClienteDTO;
+import br.com.fiap.economed.dto.estadoCivil.DetalhesEstadoCivilDTO;
+import br.com.fiap.economed.dto.convenio.DetalhesConvenioDTO;
 import br.com.fiap.economed.model.Cliente;
-import br.com.fiap.economed.model.enums.EstadoCivilCliente;
 
 import java.time.LocalDate;
 
-public record DetalhesClienteDto(
+public record DetalhesClienteDTO(
         Long id,
         String rg,
         String nome,
@@ -13,10 +16,12 @@ public record DetalhesClienteDto(
         String email,
         LocalDate dataNascimento,
         String cpf,
-        EstadoCivilCliente estadoCivil,
-        Long convenioId) {
+        DetalhesConvenioDTO convenio,
+        DetalhesEstadoCivilDTO estadoCivil,
+        DetalhesEnderecoClienteDTO endereco,
+        DetalhesHistoricoHospitalClienteDTO historicoHospital) {
 
-    public DetalhesClienteDto(Cliente cliente) {
+    public DetalhesClienteDTO(Cliente cliente) {
         this(
                 cliente.getId(),
                 cliente.getRg(),
@@ -25,7 +30,9 @@ public record DetalhesClienteDto(
                 cliente.getEmail(),
                 cliente.getDataNascimento(),
                 cliente.getCpf(),
-                cliente.getEstadoCivil(),
-                cliente.getConvenioId());
+                new DetalhesConvenioDTO(cliente.getConvenio()),
+                new DetalhesEstadoCivilDTO(cliente.getEstadoCivil()),
+                new DetalhesEnderecoClienteDTO(cliente.getEndereco()),
+                new DetalhesHistoricoHospitalClienteDTO(cliente.getHistoricoHospital()));
     }
 }

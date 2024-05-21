@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Cliente Estado Civil FK" directorySegmentName="seg_0" id="6594D5FE-3632-523C-8E77-53924594480E">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-11 02:37:13 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>87220CB3-D8B4-416C-816B-C5A1745E7CAD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9CD94D1C-B482-0E9C-91B2-827AE53F4218</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

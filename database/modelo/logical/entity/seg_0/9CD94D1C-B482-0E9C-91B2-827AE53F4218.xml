@@ -22,7 +22,9 @@
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="rg" id="947AF145-CA11-E5AC-8BE3-0AD4348D966D">
@@ -32,8 +34,11 @@
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nome" id="F18EBA0B-9384-F3D8-18AC-758F74FCCFA6">
 <createdBy>augus</createdBy>
@@ -43,8 +48,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="telefone" id="263BBDBA-42A3-937B-3115-7F26E198E3C6">
 <createdBy>augus</createdBy>
@@ -54,8 +62,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="email" id="797C527F-2D24-1113-F829-FC66910B1CFF">
 <createdBy>augus</createdBy>
@@ -65,8 +76,11 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="data_nascimento" id="9B975E6F-D19B-AC91-3828-9B69A68365BE">
 <createdBy>augus</createdBy>
@@ -76,7 +90,9 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cpf" id="CE0065E8-2134-B14E-860F-6AFF9063814D">
@@ -87,31 +103,39 @@
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="estado_civil" id="C7092F0F-2D6F-4E86-CC77-F639C86A5390">
-<createdBy>augus</createdBy>
-<createdTime>2024-04-02 06:03:17 UTC</createdTime>
+<Attribute name="estado civil" id="425672CD-9876-1DBC-8A2E-49BE3B2A0E17">
+<createdBy>gabsz</createdBy>
+<createdTime>2024-04-11 02:48:44 UTC</createdTime>
+<generatorID>CE3DA1B7-9EA8-193E-9412-7EFFDAF82905</generatorID>
 <ownerDesignName>modelo</ownerDesignName>
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="C2D1B019-FFA8-2245-04B2-27123131A887">
-<createdBy>augus</createdBy>
-<createdTime>2024-04-02 06:33:41 UTC</createdTime>
-<generatorID>63D8D7F8-625C-45B1-76CF-CAA7896095D5</generatorID>
+<Attribute name="id1" id="F0C65975-7AFF-A394-583F-49ACA42EB18B">
+<createdBy>gabsz</createdBy>
+<createdTime>2024-04-11 04:51:09 UTC</createdTime>
+<generatorID>BC4E3CCB-5598-3AD2-CFFE-E6B39F6E7655</generatorID>
 <ownerDesignName>modelo</ownerDesignName>
 <engineerTo>
 <item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>1DE577E4-0762-BBB1-051B-C3A8952AF44B</referedAttribute>
-<use>0</use>
+<referedAttribute>786D280D-5207-9A8F-9E60-077E3B912A15</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

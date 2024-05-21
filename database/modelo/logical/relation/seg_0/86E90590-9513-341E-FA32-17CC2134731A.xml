@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Endereco Cliente Cidade FK" directorySegmentName="seg_0" id="86E90590-9513-341E-FA32-17CC2134731A">
+<createdBy>augus</createdBy>
+<createdTime>2024-04-11 02:35:39 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<engineerTo>
+<item key="69FD6FCD-52EB-313D-EDE9-351A087250DD" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EEC80213-1024-8E8F-E562-845A4B9C6F88</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C4722A91-C1A2-D928-922D-A2116E7EE52C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
