@@ -16,4 +16,9 @@ public record CadastroClienteDTO(
                 Long estadoCivilId,
                 CadastroEnderecoClienteDTO endereco,
                 CadastroHistoricoHospitalClienteDTO historicoHospital) {
+
+    public String getLogin() {
+        return cpf;
+    }
+
 }

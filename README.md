@@ -1,5 +1,4 @@
-
-# Sprint 02 - *EconoMed*
+# Sprint 03 - *EconoMed*
 
 - **Java Advanced**
 
@@ -7,7 +6,6 @@
 
 - Augusto Barcelos Barros – RM: 98078
 - Gabriel Souza de Queiroz – RM: 98570
-- Gabriela Zanotto Rodrigues – RM: 551629
 - Lucas Pinheiro de Melo – RM: 97707
 - Mel Maia Rodrigues – RM: 98266
 
@@ -78,6 +76,12 @@ Copie nosso arquivo mais recente .json dentro da pasta requests, e importe em se
     -   Oferece suporte para testes em aplicativos Spring Boot, incluindo bibliotecas como JUnit e Mockito, simplificando a escrita e execução de testes.
 -   **spring-boot-starter-data-jpa**
     -   Simplifica o acesso e manipulação de dados em bancos de dados através do Spring Data JPA, configurando automaticamente a camada de persistência para trabalhar com JPA em aplicativos Spring Boot.
+-   **spring-security-test**
+    - Facilita testes de segurança no Spring.
+-   **java-jwt**
+    -  Implementa a funcionalidade de geração e validação de tokens JWT em aplicativos Java.
+-   **jakarta.validation-api**
+    -   Fornece suporte para validação de dados em aplicativos Java, permitindo a definição de regras de validação em objetos de domínio.
 
 # Funcionalidade
 
@@ -155,6 +159,13 @@ No Histórico Saúde Cliente, temos todos os dados de histórico de saúde do cl
 - **Search by ClienteId**
 - **Update**
 
+## 9. User
+
+O User é uma entidade responsável por armazenar os dados de login de nossos usuários, podendo ser uma Empresa ou um Cliente. Para o User, temos a AutenticacaoController, que é responsável por fazer o login e retornar um token JWT para que o usuário possa acessar as rotas protegidas, assim como fazer o cadastro.
+
+- **Login**
+- **Register**
+
 # Estrutura
 
 O sistema está organizado seguindo a arquitetura MVC:
@@ -165,6 +176,7 @@ O sistema está organizado seguindo a arquitetura MVC:
 - **model**: Classes que representam os objetos de negócios do aplicativo.
 - **repository**: Classes ou interfaces que definem operações de acesso a dados para interagir com o banco de dados.
 - **service**: Classes que contêm a lógica de negócios da aplicação, intermediando entre os controllers e os repositórios, promovendo a reutilização e a testabilidade do código.
+- **config**: Classes de configurações do projeto, como por exemplo, configurações de segurança.
 
 # Próximos passos:
 
@@ -173,6 +185,7 @@ O sistema está organizado seguindo a arquitetura MVC:
 - ✅ Evoluir o que já possuímos.
 - Começar a criar as requisições para resolução de nosso programa, por exemplo, um endpoint para Precificar um convênio.
 - ✅ Fazer os relacionamentos das entidade utilizando annotations.
-- (new) Fazer integração com a api de Python.
-- (new) Discutir e analisar se são necessarios mais endpoints CRUD especificos.
-- (new) Começar os testes unitários.
+- Fazer integração com a api de Python.
+- Discutir e analisar se são necessarios mais endpoints CRUD especificos.
+- Começar os testes unitários.
+- ✅(new) Fazer autenticação com JWT.

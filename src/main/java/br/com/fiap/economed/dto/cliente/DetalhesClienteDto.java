@@ -30,9 +30,9 @@ public record DetalhesClienteDTO(
                 cliente.getEmail(),
                 cliente.getDataNascimento(),
                 cliente.getCpf(),
-                new DetalhesConvenioDTO(cliente.getConvenio()),
-                new DetalhesEstadoCivilDTO(cliente.getEstadoCivil()),
-                new DetalhesEnderecoClienteDTO(cliente.getEndereco()),
-                new DetalhesHistoricoHospitalClienteDTO(cliente.getHistoricoHospital()));
+                cliente.getConvenio() != null ? new DetalhesConvenioDTO(cliente.getConvenio()) : null,
+                cliente.getEstadoCivil() != null ? new DetalhesEstadoCivilDTO(cliente.getEstadoCivil()) : null,
+                cliente.getEndereco() != null ? new DetalhesEnderecoClienteDTO(cliente.getEndereco()) : null,
+                cliente.getHistoricoHospital() != null ? new DetalhesHistoricoHospitalClienteDTO(cliente.getHistoricoHospital()) : null);
     }
 }

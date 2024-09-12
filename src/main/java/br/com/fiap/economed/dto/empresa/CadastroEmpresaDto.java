@@ -7,4 +7,6 @@ public record CadastroEmpresaDTO(
                 String telefone,
                 String email) {
 
+    public String getLogin() { return cnpj; }
+
 }

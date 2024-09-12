@@ -21,12 +21,10 @@ import java.time.LocalDate;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
-    @SequenceGenerator(name = "cliente", sequenceName = "cp1_cliente_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "rg", nullable = false, length = 20)
+    @Column(name = "rg", length = 20)
     private String rg;
 
     @Column(name = "nome", nullable = false, length = 100)
@@ -41,7 +39,7 @@ public class Cliente {
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
-    @Column(name = "cpf", length = 20)
+    @Column(name = "cpf", nullable = false, length = 20)
     private String cpf;
 
     @ManyToOne
@@ -58,6 +56,9 @@ public class Cliente {
     @JoinColumn(name = "convenio_id", referencedColumnName = "id")
     private Convenio convenio;
 
+    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private User user;
+
     public Cliente(CadastroClienteDTO dto) {
         rg = dto.rg();
         nome = dto.nome();
@@ -68,7 +69,6 @@ public class Cliente {
 
         endereco = new EnderecoCliente(dto.endereco());
         historicoHospital = new HistoricoHospitalCliente(dto.historicoHospital());
-
     }
 
     public void atualizar(AtualizacaoClienteDTO dto) {
@@ -77,6 +77,9 @@ public class Cliente {
         }
         if (dto.nome() != null) {
             this.nome = dto.nome();
+            if (this.user != null) {
+                this.user.setName(dto.nome());
+            }
         }
         if (dto.telefone() != null) {
             this.telefone = dto.telefone();
@@ -89,7 +92,9 @@ public class Cliente {
         }
         if (dto.cpf() != null) {
             this.cpf = dto.cpf();
+            if (this.user != null) {
+                this.user.setLogin(dto.cpf());
+            }
         }
     }
-
 }

@@ -19,8 +19,6 @@ import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDTO;
 public class Empresa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "empresa")
-    @SequenceGenerator(name = "empresa", sequenceName = "cp1_empresa_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
@@ -30,14 +28,17 @@ public class Empresa {
     @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    @Column(name = "tipo", nullable = false, length = 100)
+    @Column(name = "tipo", length = 100)
     private String tipo;
 
-    @Column(name = "telefone", nullable = false, length = 20)
+    @Column(name = "telefone", length = 20)
     private String telefone;
 
-    @Column(name = "email", nullable = false, length = 100)
+    @Column(name = "email", length = 100)
     private String email;
+
+    @OneToOne(mappedBy = "empresa", cascade = CascadeType.ALL)
+    private User user;
 
     public Empresa(CadastroEmpresaDTO dto) {
         this.cnpj = dto.cnpj();
@@ -47,7 +48,7 @@ public class Empresa {
         this.email = dto.email();
     }
 
-    public void atualizarDados(AtualizacaoEmpresaDTO dto) {
+    public void atualizar(AtualizacaoEmpresaDTO dto) {
         if (dto.cnpj() != null) {
             this.cnpj = dto.cnpj();
         }
@@ -63,7 +64,5 @@ public class Empresa {
         if (dto.email() != null) {
             this.email = dto.email();
         }
-
     }
-
 }

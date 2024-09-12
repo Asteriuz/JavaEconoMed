@@ -1,0 +1,1251 @@
+{
+    "info": {
+        "_postman_id": "4a497a19-fff0-4f17-8142-9775e76efbac",
+        "name": "EconoMed",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Cliente",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/clientes",
+                            "path": [
+                                "clientes"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "FindById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/clientes/1",
+                            "path": [
+                                "clientes",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/clientes",
+                            "path": [
+                                "clientes"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"Augusto Barcelos Barros\",\n  \"telefone\": \"11223344\",\n  \"email\": \"joao.silva@email.com\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"cpf\": \"123.456.789-00\",\n  \"estadoCivilId\": 1,\n  \"convenioId\": 1,\n  \"endereco\": {\n    \"rua\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"cep\": \"12345-678\",\n    \"cidadeId\": 1\n  },\n  \"historicoHospital\": {\n    \"historicoMedico\": \"Cirurgia de apendicite em 2015\",\n    \"examesRealizados\": \"Exames de rotina\",\n    \"medicamentosPrescritos\": \"Paracetamol\",\n    \"observacoes\": \"Nenhuma observação\"\n  }\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:8080/clientes/1",
+                            "path": [
+                                "clientes",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"rg\": \"123456789\",\n  \"nome\": \"João Vô\",\n  \"telefone\": \"11223344\",\n  \"email\": \"joao.silva@email.com\",\n  \"dataNascimento\": \"1990-01-01\",\n  \"cpf\": \"123.456.789-00\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:8080/clientes/6",
+                            "path": [
+                                "clientes",
+                                "6"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Convenio",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/convenios",
+                            "path": [
+                                "convenios"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "FindById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/convenios/1",
+                            "path": [
+                                "convenios",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/convenios",
+                            "path": [
+                                "convenios"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"nome\": \"Convenio C\",\n  \"empresaId\": 1,\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:8080/convenios/1",
+                            "path": [
+                                "convenios",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"nome\": \"Convenio E\",\n  \"valor\": 500.0,\n  \"tipoServico\": \"Consulta Médica\",\n  \"cobertura\": \"Consultas e exames básicos\",\n  \"contato\": \"contato@convenioa.com\",\n  \"validade\": \"2025-12-31\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:8080/convenios/6",
+                            "path": [
+                                "convenios",
+                                "6"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Empresa",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/empresas",
+                            "path": [
+                                "empresas"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "FindById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/empresas/1",
+                            "path": [
+                                "empresas",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/empresas",
+                            "path": [
+                                "empresas"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa J\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:8080/empresas/1",
+                            "path": [
+                                "empresas",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n    \"cnpj\": \"12345678901234\",\n    \"nome\": \"Empresa Porto Seguro\",\n    \"tipo\": \"Saúde\",\n    \"telefone\": \"11223344\",\n    \"email\": \"empresa.x@email.com\",\n    \"areaAtuacao\": \"Atendimento médico\"\n  }"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:8080/empresas/6",
+                            "path": [
+                                "empresas",
+                                "6"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Unidade",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/unidades",
+                            "path": [
+                                "unidades"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "FindById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/unidades/1",
+                            "path": [
+                                "unidades",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/unidades",
+                            "path": [
+                                "unidades"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"empresaId\": 1,\n  \"nome\": \"Unidade Z\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 100,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update",
+                    "request": {
+                        "method": "PUT",
+                        "url": {
+                            "raw": "http://localhost:8080/unidades/1",
+                            "path": [
+                                "unidades",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"nome\": \"Unidade Amaral\",\n  \"telefone\": \"11223344\",\n  \"email\": \"unidade.a@email.com\",\n  \"tipo\": \"Hospital\",\n  \"capacidade\": 500,\n  \"especialidades\": \"Cardiologia, Ortopedia\"\n}"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "http://localhost:8080/unidades/6",
+                            "path": [
+                                "unidades",
+                                "6"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Endereco",
+            "item": [
+                {
+                    "name": "EnderecoCliente",
+                    "item": [
+                        {
+                            "name": "List",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/endereco-cliente",
+                                    "path": [
+                                        "endereco-cliente"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "FindById",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/endereco-cliente/1",
+                                    "path": [
+                                        "endereco-cliente",
+                                        "1"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Estado",
+                    "item": [
+                        {
+                            "name": "List",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/estados",
+                                    "path": [
+                                        "estados"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "FindById",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/estados/1",
+                                    "path": [
+                                        "estados",
+                                        "1"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create",
+                            "request": {
+                                "method": "POST",
+                                "url": {
+                                    "raw": "http://localhost:8080/estados",
+                                    "path": [
+                                        "estados"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    },
+                                    "raw": "{\n  \"nome\": \"Acre\"\n}"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "url": {
+                                    "raw": "http://localhost:8080/estados/1",
+                                    "path": [
+                                        "estados",
+                                        "1"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    },
+                                    "raw": "{\n  \"nome\": \"Sao Paulo\"\n}"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "url": {
+                                    "raw": "http://localhost:8080/estados/6",
+                                    "path": [
+                                        "estados",
+                                        "6"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Cidade",
+                    "item": [
+                        {
+                            "name": "List",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/cidades",
+                                    "path": [
+                                        "cidades"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Create",
+                            "request": {
+                                "method": "POST",
+                                "url": {
+                                    "raw": "http://localhost:8080/cidades",
+                                    "path": [
+                                        "cidades"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    },
+                                    "raw": "{\n  \"estadoId\": 1,\n  \"nome\": \"Barueri\"\n}"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Update",
+                            "request": {
+                                "method": "PUT",
+                                "url": {
+                                    "raw": "http://localhost:8080/cidades/1",
+                                    "path": [
+                                        "cidades",
+                                        "1"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "body": {
+                                    "mode": "raw",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    },
+                                    "raw": "{\n  \"nome\": \"Sao Paulo\"\n}"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Delete",
+                            "request": {
+                                "method": "DELETE",
+                                "url": {
+                                    "raw": "http://localhost:8080/cidades/6",
+                                    "path": [
+                                        "cidades",
+                                        "6"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "EnderecoUnidade",
+                    "item": [
+                        {
+                            "name": "List",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/endereco-unidade",
+                                    "path": [
+                                        "endereco-unidade"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "FindById",
+                            "request": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "http://localhost:8080/endereco-unidade",
+                                    "path": [
+                                        "endereco-unidade"
+                                    ],
+                                    "protocol": "http",
+                                    "host": [
+                                        "localhost"
+                                    ],
+                                    "port": "8080"
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": [
+                                        {
+                                            "key": "token",
+                                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "HistoricoHospital",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/historico-hospital",
+                            "path": [
+                                "historico-hospital"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "FindById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/historico-hospital/1",
+                            "path": [
+                                "historico-hospital",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "HistoricoSaude",
+            "item": [
+                {
+                    "name": "List",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/historico-saude",
+                            "path": [
+                                "historico-saude"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "FindById",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/historico-saude/1",
+                            "path": [
+                                "historico-saude",
+                                "1"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJFY29ub21lZCIsInN1YiI6ImFkbWluIiwiZXhwIjoxNzI2MDk4MDUwfQ.ylImGHuaVS0s966WlPyM07wtiTMN_mNU8166Us4G120",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/auth/login",
+                            "path": [
+                                "auth",
+                                "login"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"login\": \"admin\",\n  \"password\": \"admin\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Register",
+                    "request": {
+                        "method": "POST",
+                        "url": {
+                            "raw": "http://localhost:8080/auth/register",
+                            "path": [
+                                "auth",
+                                "register"
+                            ],
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080"
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            },
+                            "raw": "{\n  \"login\": \"admin\",\n  \"password\": \"admin\",\n  \"role\": \"ADMIN\",\n  \"name\": \"Admin\"\n}"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
