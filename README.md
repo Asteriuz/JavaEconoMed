@@ -87,6 +87,13 @@ Copie nosso arquivo mais recente .json dentro da pasta requests, e importe em se
 
 O sistema possui diversas funcionalidades CRUD para nossas entidades:
 
+## 0. Autenticação
+
+A Autenticação é uma funcionalidade que permite que um usuário possa se autenticar no sistema, para que assim, possa acessar as rotas protegidas. Para isso, utilizamos o JWT, que é um token que é gerado ao fazer o login, e que é necessário para acessar as rotas protegidas.
+
+- **Login**
+- **Register**
+
 ## 1. Cliente
 
 O Cliente é nossa entidade "principal", pois é nele que temos todos os dados pessoais que serão usados para as análises. Em nosso cliente, podemos fazer o CRUD completo pois é nele que manipulamos seus dados.
