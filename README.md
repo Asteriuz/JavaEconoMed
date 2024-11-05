@@ -9,6 +9,10 @@
 - Lucas Pinheiro de Melo – RM: 97707
 - Mel Maia Rodrigues – RM: 98266
 
+## Link Video Youtube
+
+https://www.youtube.com/watch?v=tuEA14BRZz4
+
 ## Detalhes
 
 Esse projeto tem como objetivo, mostrar em detalhes, parte da nossa solução para o Challenge 2024 da empresa Plusoft.
