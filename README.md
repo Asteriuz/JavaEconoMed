@@ -1,4 +1,4 @@
-# Sprint 03 - *EconoMed*
+# Sprint 04 - *EconoMed*
 
 - **Java Advanced**
 
@@ -187,12 +187,12 @@ O sistema está organizado seguindo a arquitetura MVC:
 
 # Próximos passos:
 
-- Ao deletar um Cliente, deletar também seu histórico de saúde e hospitalar.
+- ✅ Ao deletar um Cliente, deletar também seu histórico de saúde e hospitalar.
 - ✅ Adicionar Casos de Uso para cada requisição.
 - ✅ Evoluir o que já possuímos.
 - Começar a criar as requisições para resolução de nosso programa, por exemplo, um endpoint para Precificar um convênio.
 - ✅ Fazer os relacionamentos das entidade utilizando annotations.
 - Fazer integração com a api de Python.
-- Discutir e analisar se são necessarios mais endpoints CRUD especificos.
+- ✅ Discutir e analisar se são necessarios mais endpoints CRUD especificos.
 - Começar os testes unitários.
-- ✅(new) Fazer autenticação com JWT.
+- ✅ Fazer autenticação com JWT.
