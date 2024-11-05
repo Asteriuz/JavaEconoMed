@@ -19,22 +19,32 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfigurations {
 
     @Autowired
-    SecurityFilter securityFilter;
+    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Autowired
-    JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    private SecurityFilter securityFilter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(csrf -> csrf.disable())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/v3/api-docs/**",
-                                "/swagger-ui/**", "/swagger-ui.html")
-                        .permitAll()
+                        .requestMatchers("/").permitAll()
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/cidadesView").permitAll()
+                        .requestMatchers("/clientesView").permitAll()
+                        .requestMatchers("/conveniosView").permitAll()
+                        .requestMatchers("/empresasView").permitAll()
+                        .requestMatchers("/enderecosUnidadeView").permitAll()
+                        .requestMatchers("/estadosView").permitAll()
+                        .requestMatchers("/historicoHospitalClienteView").permitAll()
+                        .requestMatchers("/unidadesView").permitAll()
+                        .requestMatchers("/enderecosClienteView").permitAll()
+                        .requestMatchers("/historicoSaudeClienteView").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/clientes/**").hasRole("CLIENTE")

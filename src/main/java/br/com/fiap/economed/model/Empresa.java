@@ -19,6 +19,8 @@ import br.com.fiap.economed.dto.empresa.AtualizacaoEmpresaDTO;
 public class Empresa {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "empresa")
+    @SequenceGenerator(name = "empresa", sequenceName = "cp1_empresa_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

@@ -21,6 +21,8 @@ import java.time.LocalDate;
 public class Cliente {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente")
+    @SequenceGenerator(name = "cliente", sequenceName = "cp1_cliente_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
